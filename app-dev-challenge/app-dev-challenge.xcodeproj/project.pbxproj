@@ -13,6 +13,7 @@
 		90CC593D1A83E76F00E899D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90CC593C1A83E76F00E899D2 /* Images.xcassets */; };
 		90CC59401A83E76F00E899D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CC593E1A83E76F00E899D2 /* LaunchScreen.xib */; };
 		90CC594C1A83E76F00E899D2 /* app_dev_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC594B1A83E76F00E899D2 /* app_dev_challengeTests.swift */; };
+		EE2A1CD11A857ECD00F41D9E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		90CC59451A83E76F00E899D2 /* app-dev-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "app-dev-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CC594A1A83E76F00E899D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90CC594B1A83E76F00E899D2 /* app_dev_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_dev_challengeTests.swift; sourceTree = "<group>"; };
+		EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2A1CD11A857ECD00F41D9E /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,7 @@
 			children = (
 				909F09A81A845B8000D131FC /* Playgrounds */,
 				90CC59321A83E76F00E899D2 /* app-dev-challenge */,
+				90CC59331A83E76F00E899D2 /* Supporting Files */,
 				90CC59481A83E76F00E899D2 /* app-dev-challengeTests */,
 				90CC59311A83E76F00E899D2 /* Products */,
 			);
@@ -96,7 +100,6 @@
 				90CC59571A83E7AF00E899D2 /* Models */,
 				90CC59561A83E79200E899D2 /* Controllers */,
 				90CC59551A83E78500E899D2 /* Views */,
-				90CC59331A83E76F00E899D2 /* Supporting Files */,
 			);
 			path = "app-dev-challenge";
 			sourceTree = "<group>";
@@ -104,12 +107,14 @@
 		90CC59331A83E76F00E899D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE2A1CD21A857EEC00F41D9E /* Framework */,
 				90CC59351A83E76F00E899D2 /* AppDelegate.swift */,
 				90CC593C1A83E76F00E899D2 /* Images.xcassets */,
 				90CC593E1A83E76F00E899D2 /* LaunchScreen.xib */,
 				90CC59341A83E76F00E899D2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = "app-dev-challenge";
 			sourceTree = "<group>";
 		};
 		90CC59481A83E76F00E899D2 /* app-dev-challengeTests */ = {
@@ -150,6 +155,14 @@
 			children = (
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		EE2A1CD21A857EEC00F41D9E /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

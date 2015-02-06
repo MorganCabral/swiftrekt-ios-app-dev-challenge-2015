@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import SpriteKit
 
 class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    let scene = SKScene(size: view.bounds.size)
+    let spriteView = view as SKView
+    spriteView.showsDrawCount = true;  spriteView.showsNodeCount = true; spriteView.showsFPS = true; spriteView.ignoresSiblingOrder = true
+    scene.scaleMode = .ResizeFill
+    spriteView.presentScene(scene)
+    
     // Do any additional setup after loading the view, typically from a nib.
   }
 
