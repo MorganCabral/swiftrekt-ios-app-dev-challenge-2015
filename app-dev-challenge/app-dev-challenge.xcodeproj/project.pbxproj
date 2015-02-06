@@ -26,6 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		909F09A91A845F9400D131FC /* ImageCapture.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageCapture.playground; sourceTree = "<group>"; };
+		909F09AA1A845FA600D131FC /* GameAssets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GameAssets.playground; sourceTree = "<group>"; };
+		909F09AB1A845FB700D131FC /* Networking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Networking.playground; sourceTree = "<group>"; };
+		909F09AC1A845FCB00D131FC /* UI.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = UI.playground; sourceTree = "<group>"; };
 		90CC59301A83E76F00E899D2 /* app-dev-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-dev-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CC59341A83E76F00E899D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90CC59351A83E76F00E899D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +60,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		909F09A81A845B8000D131FC /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				909F09A91A845F9400D131FC /* ImageCapture.playground */,
+				909F09AA1A845FA600D131FC /* GameAssets.playground */,
+				909F09AB1A845FB700D131FC /* Networking.playground */,
+				909F09AC1A845FCB00D131FC /* UI.playground */,
+			);
+			name = Playgrounds;
+			sourceTree = "<group>";
+		};
 		90CC59271A83E76F00E899D2 = {
 			isa = PBXGroup;
 			children = (
+				909F09A81A845B8000D131FC /* Playgrounds */,
 				90CC59321A83E76F00E899D2 /* app-dev-challenge */,
 				90CC59481A83E76F00E899D2 /* app-dev-challengeTests */,
 				90CC59311A83E76F00E899D2 /* Products */,
@@ -431,6 +447,7 @@
 				90CC59511A83E76F00E899D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90CC59521A83E76F00E899D2 /* Build configuration list for PBXNativeTarget "app-dev-challengeTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +456,7 @@
 				90CC59541A83E76F00E899D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
