@@ -43,15 +43,21 @@ class LoadingScene: SKScene {
     override func didMoveToView(view: SKView) {
         backgroundColor = SKColor.darkGrayColor()
         
+        
+        fire.size = CGSize(width: 32, height: 32)
+        water.size = CGSize(width: 32, height: 32)
+        earth.size = CGSize(width: 32, height: 32)
+        air.size = CGSize(width: 32, height: 32)
+        
         // Positions of element sprites
         //      F
         //  E   +   A
         //      W
         //
-        fire.position = CGPoint(x: size.width * 0.5, y: size.height * 0.1)
-        water.position = CGPoint(x: size.width * 0.5, y: size.height * 0.3)
-        earth.position = CGPoint(x: size.width * 0.2, y: size.height * 0.5)
-        air.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        fire.position = CGPoint(x: size.width * 0.5, y: size.height * 0.75)
+        water.position = CGPoint(x: size.width * 0.5, y: size.height * 0.25)
+        earth.position = CGPoint(x: size.width * (0.5 - 0.25/2), y: size.height * 0.5)
+        air.position = CGPoint(x: size.width * (0.5 + 0.25/2), y: size.height * 0.5)
         
         //add children
         addChild(fire)
