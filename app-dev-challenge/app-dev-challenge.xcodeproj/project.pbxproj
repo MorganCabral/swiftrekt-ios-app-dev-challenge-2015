@@ -13,11 +13,11 @@
 		90CC593D1A83E76F00E899D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90CC593C1A83E76F00E899D2 /* Images.xcassets */; };
 		90CC59401A83E76F00E899D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CC593E1A83E76F00E899D2 /* LaunchScreen.xib */; };
 		90CC594C1A83E76F00E899D2 /* app_dev_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC594B1A83E76F00E899D2 /* app_dev_challengeTests.swift */; };
+		D33E64E21A85C54700A5FCD3 /* BlueWater.png in Resources */ = {isa = PBXBuildFile; fileRef = D33E64DE1A85C54700A5FCD3 /* BlueWater.png */; };
+		D33E64E31A85C54700A5FCD3 /* GreenAir.png in Resources */ = {isa = PBXBuildFile; fileRef = D33E64DF1A85C54700A5FCD3 /* GreenAir.png */; };
+		D33E64E41A85C54700A5FCD3 /* RedFire.png in Resources */ = {isa = PBXBuildFile; fileRef = D33E64E01A85C54700A5FCD3 /* RedFire.png */; };
+		D33E64E51A85C54700A5FCD3 /* YellowEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = D33E64E11A85C54700A5FCD3 /* YellowEarth.png */; };
 		EE2A1CD11A857ECD00F41D9E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */; };
-		EE2A1CD71A8594FF00F41D9E /* BlueWater.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD31A8594FF00F41D9E /* BlueWater.png */; };
-		EE2A1CD81A8594FF00F41D9E /* GreenAir.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD41A8594FF00F41D9E /* GreenAir.png */; };
-		EE2A1CD91A8594FF00F41D9E /* RedFire.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD51A8594FF00F41D9E /* RedFire.png */; };
-		EE2A1CDA1A8594FF00F41D9E /* YellowEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD61A8594FF00F41D9E /* YellowEarth.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +45,11 @@
 		90CC59451A83E76F00E899D2 /* app-dev-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "app-dev-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CC594A1A83E76F00E899D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90CC594B1A83E76F00E899D2 /* app_dev_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_dev_challengeTests.swift; sourceTree = "<group>"; };
+		D33E64DE1A85C54700A5FCD3 /* BlueWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueWater.png; sourceTree = "<group>"; };
+		D33E64DF1A85C54700A5FCD3 /* GreenAir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenAir.png; sourceTree = "<group>"; };
+		D33E64E01A85C54700A5FCD3 /* RedFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedFire.png; sourceTree = "<group>"; };
+		D33E64E11A85C54700A5FCD3 /* YellowEarth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowEarth.png; sourceTree = "<group>"; };
 		EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		EE2A1CD31A8594FF00F41D9E /* BlueWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlueWater.png; path = ../../../Downloads/BlueWater.png; sourceTree = "<group>"; };
-		EE2A1CD41A8594FF00F41D9E /* GreenAir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenAir.png; path = ../../../Downloads/GreenAir.png; sourceTree = "<group>"; };
-		EE2A1CD51A8594FF00F41D9E /* RedFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RedFire.png; path = ../../../Downloads/RedFire.png; sourceTree = "<group>"; };
-		EE2A1CD61A8594FF00F41D9E /* YellowEarth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YellowEarth.png; path = ../../../Downloads/YellowEarth.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +85,7 @@
 		90CC59271A83E76F00E899D2 = {
 			isa = PBXGroup;
 			children = (
+				D33E64DD1A85C53800A5FCD3 /* Assets */,
 				909F09A81A845B8000D131FC /* Playgrounds */,
 				90CC59321A83E76F00E899D2 /* app-dev-challenge */,
 				90CC59331A83E76F00E899D2 /* Supporting Files */,
@@ -115,7 +116,6 @@
 		90CC59331A83E76F00E899D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EE2A1CDB1A85950F00F41D9E /* ElementPics */,
 				EE2A1CD21A857EEC00F41D9E /* Framework */,
 				90CC59351A83E76F00E899D2 /* AppDelegate.swift */,
 				90CC593C1A83E76F00E899D2 /* Images.xcassets */,
@@ -166,23 +166,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		D33E64DD1A85C53800A5FCD3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D33E64DE1A85C54700A5FCD3 /* BlueWater.png */,
+				D33E64DF1A85C54700A5FCD3 /* GreenAir.png */,
+				D33E64E01A85C54700A5FCD3 /* RedFire.png */,
+				D33E64E11A85C54700A5FCD3 /* YellowEarth.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		EE2A1CD21A857EEC00F41D9E /* Framework */ = {
 			isa = PBXGroup;
 			children = (
 				EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */,
 			);
 			name = Framework;
-			sourceTree = "<group>";
-		};
-		EE2A1CDB1A85950F00F41D9E /* ElementPics */ = {
-			isa = PBXGroup;
-			children = (
-				EE2A1CD31A8594FF00F41D9E /* BlueWater.png */,
-				EE2A1CD41A8594FF00F41D9E /* GreenAir.png */,
-				EE2A1CD51A8594FF00F41D9E /* RedFire.png */,
-				EE2A1CD61A8594FF00F41D9E /* YellowEarth.png */,
-			);
-			name = ElementPics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +234,7 @@
 				TargetAttributes = {
 					90CC592F1A83E76F00E899D2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 2S3D8J8M3T;
 					};
 					90CC59441A83E76F00E899D2 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -265,13 +266,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE2A1CD81A8594FF00F41D9E /* GreenAir.png in Resources */,
+				D33E64E31A85C54700A5FCD3 /* GreenAir.png in Resources */,
 				90CC593B1A83E76F00E899D2 /* Main.storyboard in Resources */,
 				90CC59401A83E76F00E899D2 /* LaunchScreen.xib in Resources */,
-				EE2A1CDA1A8594FF00F41D9E /* YellowEarth.png in Resources */,
+				D33E64E51A85C54700A5FCD3 /* YellowEarth.png in Resources */,
 				90CC593D1A83E76F00E899D2 /* Images.xcassets in Resources */,
-				EE2A1CD71A8594FF00F41D9E /* BlueWater.png in Resources */,
-				EE2A1CD91A8594FF00F41D9E /* RedFire.png in Resources */,
+				D33E64E21A85C54700A5FCD3 /* BlueWater.png in Resources */,
+				D33E64E41A85C54700A5FCD3 /* RedFire.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,9 +416,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "app-dev-challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -425,9 +429,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "app-dev-challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
