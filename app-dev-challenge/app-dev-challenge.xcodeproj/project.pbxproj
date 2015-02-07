@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2661DB921A86790B002D8392 /* LoadingScene.swift */; };
 		90CC59361A83E76F00E899D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59351A83E76F00E899D2 /* AppDelegate.swift */; };
 		90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59371A83E76F00E899D2 /* ViewController.swift */; };
 		90CC593B1A83E76F00E899D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90CC59391A83E76F00E899D2 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2661DB921A86790B002D8392 /* LoadingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		909F09A91A845F9400D131FC /* ImageCapture.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageCapture.playground; sourceTree = "<group>"; };
 		909F09AA1A845FA600D131FC /* GameAssets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GameAssets.playground; sourceTree = "<group>"; };
 		909F09AB1A845FB700D131FC /* Networking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Networking.playground; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2661DB911A8678FD002D8392 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2661DB921A86790B002D8392 /* LoadingScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		909F09A81A845B8000D131FC /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 			children = (
 				90CC59571A83E7AF00E899D2 /* Models */,
 				90CC59561A83E79200E899D2 /* Controllers */,
+				2661DB911A8678FD002D8392 /* Scenes */,
 				90CC59551A83E78500E899D2 /* Views */,
 			);
 			path = "app-dev-challenge";
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */,
+				2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */,
 				90CC59361A83E76F00E899D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
