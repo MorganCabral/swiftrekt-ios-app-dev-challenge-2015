@@ -14,6 +14,10 @@
 		90CC59401A83E76F00E899D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CC593E1A83E76F00E899D2 /* LaunchScreen.xib */; };
 		90CC594C1A83E76F00E899D2 /* app_dev_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC594B1A83E76F00E899D2 /* app_dev_challengeTests.swift */; };
 		EE2A1CD11A857ECD00F41D9E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */; };
+		EE2A1CD71A8594FF00F41D9E /* BlueWater.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD31A8594FF00F41D9E /* BlueWater.png */; };
+		EE2A1CD81A8594FF00F41D9E /* GreenAir.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD41A8594FF00F41D9E /* GreenAir.png */; };
+		EE2A1CD91A8594FF00F41D9E /* RedFire.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD51A8594FF00F41D9E /* RedFire.png */; };
+		EE2A1CDA1A8594FF00F41D9E /* YellowEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A1CD61A8594FF00F41D9E /* YellowEarth.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		90CC594A1A83E76F00E899D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90CC594B1A83E76F00E899D2 /* app_dev_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_dev_challengeTests.swift; sourceTree = "<group>"; };
 		EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		EE2A1CD31A8594FF00F41D9E /* BlueWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlueWater.png; path = ../../../Downloads/BlueWater.png; sourceTree = "<group>"; };
+		EE2A1CD41A8594FF00F41D9E /* GreenAir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenAir.png; path = ../../../Downloads/GreenAir.png; sourceTree = "<group>"; };
+		EE2A1CD51A8594FF00F41D9E /* RedFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RedFire.png; path = ../../../Downloads/RedFire.png; sourceTree = "<group>"; };
+		EE2A1CD61A8594FF00F41D9E /* YellowEarth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YellowEarth.png; path = ../../../Downloads/YellowEarth.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		90CC59331A83E76F00E899D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE2A1CDB1A85950F00F41D9E /* ElementPics */,
 				EE2A1CD21A857EEC00F41D9E /* Framework */,
 				90CC59351A83E76F00E899D2 /* AppDelegate.swift */,
 				90CC593C1A83E76F00E899D2 /* Images.xcassets */,
@@ -163,6 +172,17 @@
 				EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		EE2A1CDB1A85950F00F41D9E /* ElementPics */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A1CD31A8594FF00F41D9E /* BlueWater.png */,
+				EE2A1CD41A8594FF00F41D9E /* GreenAir.png */,
+				EE2A1CD51A8594FF00F41D9E /* RedFire.png */,
+				EE2A1CD61A8594FF00F41D9E /* YellowEarth.png */,
+			);
+			name = ElementPics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,9 +265,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2A1CD81A8594FF00F41D9E /* GreenAir.png in Resources */,
 				90CC593B1A83E76F00E899D2 /* Main.storyboard in Resources */,
 				90CC59401A83E76F00E899D2 /* LaunchScreen.xib in Resources */,
+				EE2A1CDA1A8594FF00F41D9E /* YellowEarth.png in Resources */,
 				90CC593D1A83E76F00E899D2 /* Images.xcassets in Resources */,
+				EE2A1CD71A8594FF00F41D9E /* BlueWater.png in Resources */,
+				EE2A1CD91A8594FF00F41D9E /* RedFire.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
