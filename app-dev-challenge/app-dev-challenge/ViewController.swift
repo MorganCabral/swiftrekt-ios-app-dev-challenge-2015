@@ -28,43 +28,13 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-
-}
-
-class LoadingScene: SKScene {
-    
-    // Create element sprite nodes
-    let fire = SKSpriteNode(imageNamed: "RedFire")
-    let water = SKSpriteNode(imageNamed: "BlueWater")
-    let earth = SKSpriteNode(imageNamed: "YellowEarth")
-    let air = SKSpriteNode(imageNamed: "GreenAir")
-    
-    override func didMoveToView(view: SKView) {
-        backgroundColor = SKColor.darkGrayColor()
-        
-        
-        fire.size = CGSize(width: 32, height: 32)
-        water.size = CGSize(width: 32, height: 32)
-        earth.size = CGSize(width: 32, height: 32)
-        air.size = CGSize(width: 32, height: 32)
-        
-        // Positions of element sprites
-        //      F
-        //  E   +   A
-        //      W
-        //
-        fire.position = CGPoint(x: size.width * 0.5, y: size.height * 0.75)
-        water.position = CGPoint(x: size.width * 0.5, y: size.height * 0.25)
-        earth.position = CGPoint(x: size.width * (0.5 - 0.25/2), y: size.height * 0.5)
-        air.position = CGPoint(x: size.width * (0.5 + 0.25/2), y: size.height * 0.5)
-        
-        //add children
-        addChild(fire)
-        addChild(water)
-        addChild(earth)
-        addChild(air)
-        
-    }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return false;
+  }
+  
+  override func shouldAutorotate() -> Bool {
+    return false;
+  }
 }
 
