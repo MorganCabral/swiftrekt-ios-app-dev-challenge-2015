@@ -17,8 +17,8 @@ public class IntroCountdownSprite : SKLabelNode {
     super.init()
     self.fontName = "Palatino"
     self.text = "5"
-    self.color = UIColor.blackColor()
-    self.fontSize = 72
+    self.fontColor = UIColor.blackColor()
+    self.fontSize = 144
   }
 
   required public init?(coder aDecoder: NSCoder) {
