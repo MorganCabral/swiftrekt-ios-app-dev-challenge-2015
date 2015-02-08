@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2661DB921A86790B002D8392 /* LoadingScene.swift */; };
+		26EC9C841A87C6FE00699145 /* takePictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC9C831A87C6FE00699145 /* takePictureController.swift */; };
 		90144F641A87DCEC00B42644 /* wizard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90144F631A87DCEC00B42644 /* wizard@2x.png */; };
 		90144F6C1A87DDA200B42644 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 90144F6B1A87DDA200B42644 /* background.png */; };
 		90144F6E1A87E20600B42644 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90144F6D1A87E20600B42644 /* background@2x.png */; };
+		904D2A491A881DEB000FDEAF /* IntroCountdownSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904D2A481A881DEB000FDEAF /* IntroCountdownSprite.swift */; };
 		907558C61A87CCD800FC41E0 /* air_impact_spell.png in Resources */ = {isa = PBXBuildFile; fileRef = 907558B91A87CCD800FC41E0 /* air_impact_spell.png */; };
 		907558C71A87CCD800FC41E0 /* air_spell_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 907558BA1A87CCD800FC41E0 /* air_spell_sprite.png */; };
 		907558C81A87CCD800FC41E0 /* BlueWater.png in Resources */ = {isa = PBXBuildFile; fileRef = 907558BB1A87CCD800FC41E0 /* BlueWater.png */; };
@@ -25,7 +27,6 @@
 		907558D11A87CCD800FC41E0 /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 907558C41A87CCD800FC41E0 /* wizard.png */; };
 		907558D21A87CCD800FC41E0 /* YellowEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = 907558C51A87CCD800FC41E0 /* YellowEarth.png */; };
 		907558D41A87CD2A00FC41E0 /* WizardSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907558D31A87CD2A00FC41E0 /* WizardSprite.swift */; };
-		26EC9C841A87C6FE00699145 /* takePictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC9C831A87C6FE00699145 /* takePictureController.swift */; };
 		90CC59361A83E76F00E899D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59351A83E76F00E899D2 /* AppDelegate.swift */; };
 		90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59371A83E76F00E899D2 /* ViewController.swift */; };
 		90CC593B1A83E76F00E899D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90CC59391A83E76F00E899D2 /* Main.storyboard */; };
@@ -57,9 +58,11 @@
 
 /* Begin PBXFileReference section */
 		2661DB921A86790B002D8392 /* LoadingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
+		26EC9C831A87C6FE00699145 /* takePictureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = takePictureController.swift; sourceTree = "<group>"; };
 		90144F631A87DCEC00B42644 /* wizard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wizard@2x.png"; path = "app-dev-challenge/Assets/wizard@2x.png"; sourceTree = "<group>"; };
 		90144F6B1A87DDA200B42644 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "app-dev-challenge/Assets/background.png"; sourceTree = "<group>"; };
 		90144F6D1A87E20600B42644 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "app-dev-challenge/Assets/background@2x.png"; sourceTree = "<group>"; };
+		904D2A481A881DEB000FDEAF /* IntroCountdownSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCountdownSprite.swift; sourceTree = "<group>"; };
 		907558B91A87CCD800FC41E0 /* air_impact_spell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = air_impact_spell.png; path = "app-dev-challenge/Assets/air_impact_spell.png"; sourceTree = "<group>"; };
 		907558BA1A87CCD800FC41E0 /* air_spell_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = air_spell_sprite.png; path = "app-dev-challenge/Assets/air_spell_sprite.png"; sourceTree = "<group>"; };
 		907558BB1A87CCD800FC41E0 /* BlueWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlueWater.png; path = "app-dev-challenge/Assets/BlueWater.png"; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		907558C41A87CCD800FC41E0 /* wizard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizard.png; path = "app-dev-challenge/Assets/wizard.png"; sourceTree = "<group>"; };
 		907558C51A87CCD800FC41E0 /* YellowEarth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YellowEarth.png; path = "app-dev-challenge/Assets/YellowEarth.png"; sourceTree = "<group>"; };
 		907558D31A87CD2A00FC41E0 /* WizardSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WizardSprite.swift; sourceTree = "<group>"; };
-		26EC9C831A87C6FE00699145 /* takePictureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = takePictureController.swift; sourceTree = "<group>"; };
 		909F09A91A845F9400D131FC /* ImageCapture.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageCapture.playground; sourceTree = "<group>"; };
 		909F09AA1A845FA600D131FC /* GameAssets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GameAssets.playground; sourceTree = "<group>"; };
 		909F09AB1A845FB700D131FC /* Networking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Networking.playground; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				90D64FFD1A86F99C00809C30 /* SpellSprite.swift */,
 				90D64FFF1A86F9A900809C30 /* PlayerPortraitSprite.swift */,
 				907558D31A87CD2A00FC41E0 /* WizardSprite.swift */,
+				904D2A481A881DEB000FDEAF /* IntroCountdownSprite.swift */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				26EC9C841A87C6FE00699145 /* takePictureController.swift in Sources */,
 				90D64FFC1A86F97900809C30 /* HealthBarSprite.swift in Sources */,
 				90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */,
+				904D2A491A881DEB000FDEAF /* IntroCountdownSprite.swift in Sources */,
 				2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */,
 				90D64FEB1A867DB600809C30 /* GameScene.swift in Sources */,
 				90D64FF51A86F8DD00809C30 /* Player.swift in Sources */,
