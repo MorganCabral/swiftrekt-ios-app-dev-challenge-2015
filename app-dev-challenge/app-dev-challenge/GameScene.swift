@@ -26,12 +26,20 @@ class GameScene: SKScene {
     var playerOneWizard = WizardSprite(startingPosition: leftWizardStart, endingPosition: leftWizardEnd, facesRight: true);
 //    var playerTwoWizard = WizardSprite(rightWizardStart, rightWizardEnd, false);
     
+    // Initalize Health Sprites
+    var playerOneHealthSprite = HealthBarSprite(positionOnScene: CGPoint(x: 100.0, y: 20.0))
+    var playerTwoHealthSprite = HealthBarSprite(positionOnScene: CGPoint(x: size.width - 100.0, y: size.height - 40.0))
+    
     // Add the composed set of game sprites to the scene.
     // Make sure this is the absolutely last thing that happens.
     self.addChild(backgroundNode)
     
     // Add the wizards.
     self.addChild(playerOneWizard)
+    
+    // Add the HP Player One Label
+    self.addChild(playerOneHealthSprite)
+    self.addChild(playerTwoHealthSprite)
     
     // Start up the initialization animation.
     playerOneWizard.doInitialAnimation();
