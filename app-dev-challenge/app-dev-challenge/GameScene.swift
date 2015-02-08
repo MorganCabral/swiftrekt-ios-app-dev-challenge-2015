@@ -12,34 +12,29 @@ class GameScene: SKScene {
   
   override func didMoveToView(view: SKView) {
     backgroundNode = SKSpriteNode(imageNamed: "background")
+    backgroundNode.anchorPoint = CGPoint(x: 0, y: 1)
+    backgroundNode.position = CGPointMake(0, size.height)
     
     // Create the background sprite.
     var width = size.width * 2.0
     var height = size.height * 2.0
-    backgroundNode.size = CGSize(width: width, height: height)
-    backgroundNode.position = CGPoint(x: 0.0, y: 0.0)
     
-    // Create player sprites.
-    // TODO: Actually do this.
-
-    // Create the player camera view.
-    // TODO: This is a placeholder until we can integrate Pete's logic for
-    // webcam stuff in.
-    var portraitWidth = CGFloat(150.0)
-    portraitNode = SKSpriteNode(imageNamed: "peter.jpg")
+    // Initialize sprites for the wizards.
+    var leftWizardStart = CGPoint(x: -300.0, y: 300.0)
+    var leftWizardEnd = CGPoint(x: width * 0.15, y: 300.0)
     
-    // Make the portrait image a square.
-    // TODO: Fix the aspect ratio.
-    var padding = CGFloat(20.0)
-    portraitNode.size = CGSize(width: portraitWidth, height: portraitWidth)
-    portraitNode.position = CGPoint(x: size.width - portraitWidth/2 - padding , y: portraitWidth/2 + padding)
-    backgroundNode.addChild(portraitNode)
-    
-    // Create health bar sprites.
+    var playerOneWizard = WizardSprite(startingPosition: leftWizardStart, endingPosition: leftWizardEnd, facesRight: true);
+//    var playerTwoWizard = WizardSprite(rightWizardStart, rightWizardEnd, false);
     
     // Add the composed set of game sprites to the scene.
     // Make sure this is the absolutely last thing that happens.
     self.addChild(backgroundNode)
+    
+    // Add the wizards.
+    self.addChild(playerOneWizard)
+    
+    // Start up the initialization animation.
+    playerOneWizard.doInitialAnimation();
   }
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -67,9 +62,4 @@ class GameScene: SKScene {
   }
   
   var backgroundNode : SKSpriteNode!
-  var portraitNode : SKSpriteNode!
-  var playerOneNode : SKSpriteNode!
-  var playerTwoNode : SKSpriteNode!
-  var p1HealthBar : SKShapeNode!
-  var p2HealthBar : SKShapeNode!
 }
