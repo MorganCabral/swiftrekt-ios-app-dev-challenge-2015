@@ -4,6 +4,7 @@
 //
 //  Created by Morgan Cabral on 2/5/15.
 //  Code by Holly Hastings
+//  Tina is here too!
 //  Copyright (c) 2015 Team SwiftRekt. All rights reserved.
 //
 
@@ -11,16 +12,17 @@ import UIKit
 import SpriteKit
 
 class ViewController: UIViewController {
+    @IBOutlet var startButton: UIButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Scene stuff
-    let scene = LoadingScene(size: view.bounds.size)
-    let spriteView : SKView = self.view as SKView;
-    spriteView.showsDrawCount = true;  spriteView.showsNodeCount = true; spriteView.showsFPS = true; spriteView.ignoresSiblingOrder = true
-    scene.scaleMode = .ResizeFill
-    spriteView.presentScene(scene)
+//    let scene = LoadingScene(size: view.bounds.size)
+//    let spriteView : SKView = self.view as SKView;
+//    spriteView.showsDrawCount = true;  spriteView.showsNodeCount = true; spriteView.showsFPS = true; spriteView.ignoresSiblingOrder = true
+//    scene.scaleMode = .ResizeFill
+//    spriteView.presentScene(scene)
 
   }
 
@@ -36,5 +38,10 @@ class ViewController: UIViewController {
   override func shouldAutorotate() -> Bool {
     return false;
   }
+    //here we should be able to activate the camera after hte button is pressed. Try to change the completion to something
+    @IBAction func startAction(sender: UIButton) {
+        let picture = self.storyboard?.instantiateViewControllerWithIdentifier("picture") as takePictureController
+        self.navigationController?.pushViewController(picture, animated: false)
+    }
 }
 
