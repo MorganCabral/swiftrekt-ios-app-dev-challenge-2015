@@ -9,22 +9,32 @@
 import SpriteKit
 
 class GameScene: SKScene {
-  
+
   override func didMoveToView(view: SKView) {
+    // Initialize the background sprite.
     backgroundNode = SKSpriteNode(imageNamed: "background")
     backgroundNode.anchorPoint = CGPoint(x: 0, y: 1)
     backgroundNode.position = CGPointMake(0, size.height)
     
-    // Create the background sprite.
-    var width = size.width * 2.0
-    var height = size.height * 2.0
+    var uiOrigin = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+    
+    // Initialize the counterdown timer. This will go away after five seconds.
+    countdownTimerSprite = IntroCountdownSprite();
+    countdownTimerSprite.position = uiOrigin
     
     // Initialize sprites for the wizards.
     var leftWizardStart = CGPoint(x: -300.0, y: 300.0)
-    var leftWizardEnd = CGPoint(x: width * 0.15, y: 300.0)
+    var leftWizardEnd = CGPoint(x: size.width * 0.15, y: 300.0)
     
-    var playerOneWizard = WizardSprite(startingPosition: leftWizardStart, endingPosition: leftWizardEnd, facesRight: true);
-//    var playerTwoWizard = WizardSprite(rightWizardStart, rightWizardEnd, false);
+    var rightWizardStart = CGPoint(x: size.width + 300.0, y: 300.0)
+    var rightWizardEnd = CGPoint(x: size.width * 0.85, y: 300.0)
+    
+    var wizardOne = WizardSprite(startingPosition: leftWizardStart, endingPosition: leftWizardEnd, facesRight: true)
+    var wizardTwo = WizardSprite(startingPosition: rightWizardStart, endingPosition: rightWizardEnd, facesRight: false)
+    
+    // Create the spell sprites.
+    var leftSpellCastPosition = CGPoint( x: size.width * 0.15, y : 300.0 );
+    var rightSpellCastPosition = CGPoint( x: size.width * 0.85, y : 300.0 );
     
     // Initalize Health Sprites
     var playerOneHealthSprite = HealthBarSprite(positionOnScene: CGPoint(x: 100.0, y: 20.0))
@@ -35,7 +45,11 @@ class GameScene: SKScene {
     self.addChild(backgroundNode)
     
     // Add the wizards.
-    self.addChild(playerOneWizard)
+    self.addChild(wizardOne)
+    self.addChild(wizardTwo)
+    
+    // Add the countdown timer in.
+    self.addChild(countdownTimerSprite)
     
     // Add the HP Player One Label
     self.addChild(playerOneHealthSprite)
@@ -48,11 +62,14 @@ class GameScene: SKScene {
     
     var placeholderSpellSprite = SpellSprite(spell: placeholderSpell, startingPosition: leftSpellStart, endingPosition: leftSpellEnd, facesRight: true)
     
-    
     // Start up the initialization animation.
     playerOneWizard.doInitialAnimation();
     self.addChild(placeholderSpellSprite)
     placeholderSpellSprite.doInitialAnimation()
+
+    // Make moves son.
+    wizardOne.doInitialAnimation()
+    wizardTwo.doInitialAnimation()
   }
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -76,8 +93,34 @@ class GameScene: SKScene {
   }
   
   override func update(currentTime: CFTimeInterval) {
-    /* Called before each frame is rendered */
+    if !_hasInitializedCountdown {
+      countdownTimerSprite.initializeCountdown(currentTime)
+      _hasInitializedCountdown = true
+    }
+    
+    if !_hasSetGameBeginTime {
+      _gameBeginTime = currentTime + 6
+      _hasSetGameBeginTime = true
+    }
+
+    countdownTimerSprite.updateIntroAnimationStartupTimer(currentTime)
+    
+    // If the intro animation hasn't started, don't do anything.
+    if !isGameStarted( currentTime ) {
+      return
+    }
+    
+  }
+  
+  func isGameStarted( currentTime : CFTimeInterval ) -> Bool {
+    return currentTime >= _gameBeginTime
   }
   
   var backgroundNode : SKSpriteNode!
+  
+  private var _gameBeginTime : CFTimeInterval!
+  private var _hasSetGameBeginTime : Bool = false
+  
+  var countdownTimerSprite : IntroCountdownSprite!
+  private var _hasInitializedCountdown : Bool = false
 }
