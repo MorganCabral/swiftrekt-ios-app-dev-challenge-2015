@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2661DB921A86790B002D8392 /* LoadingScene.swift */; };
+		26EC9C841A87C6FE00699145 /* takePictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC9C831A87C6FE00699145 /* takePictureController.swift */; };
 		90CC59361A83E76F00E899D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59351A83E76F00E899D2 /* AppDelegate.swift */; };
 		90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59371A83E76F00E899D2 /* ViewController.swift */; };
 		90CC593B1A83E76F00E899D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90CC59391A83E76F00E899D2 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		2661DB921A86790B002D8392 /* LoadingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
+		26EC9C831A87C6FE00699145 /* takePictureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = takePictureController.swift; sourceTree = "<group>"; };
 		909F09A91A845F9400D131FC /* ImageCapture.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageCapture.playground; sourceTree = "<group>"; };
 		909F09AA1A845FA600D131FC /* GameAssets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GameAssets.playground; sourceTree = "<group>"; };
 		909F09AB1A845FB700D131FC /* Networking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Networking.playground; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				90D64FEC1A867DBE00809C30 /* GameViewController.swift */,
 				90CC59371A83E76F00E899D2 /* ViewController.swift */,
+				26EC9C831A87C6FE00699145 /* takePictureController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				90D64FFE1A86F99C00809C30 /* SpellSprite.swift in Sources */,
 				90D64FED1A867DBE00809C30 /* GameViewController.swift in Sources */,
 				90D650001A86F9A900809C30 /* PlayerPortraitSprite.swift in Sources */,
+				26EC9C841A87C6FE00699145 /* takePictureController.swift in Sources */,
 				90D64FFC1A86F97900809C30 /* HealthBarSprite.swift in Sources */,
 				90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */,
 				2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */,
