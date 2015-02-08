@@ -23,6 +23,7 @@ public class SpellSprite : SKSpriteNode {
         var texture = SKTexture(imageNamed: _spell.spriteFileName)
         var size = CGSize(width: texture.size().width, height: texture.size().height)
         super.init(texture: texture, color: UIColor.whiteColor(), size: size)
+        self.setScale(CGFloat(0.3))
         
         // Scale the sprite if we need to make it look to the left.
         if !facesRight {
