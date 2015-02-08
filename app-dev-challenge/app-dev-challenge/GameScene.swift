@@ -17,6 +17,8 @@ class GameScene: SKScene {
     backgroundNode.position = CGPointMake(0, size.height)
     
     var uiOrigin = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+    var width = self.frame.size.width
+    var height = self.frame.size.height
     
     // Initialize the counterdown timer. This will go away after five seconds.
     countdownTimerSprite = IntroCountdownSprite();
@@ -63,7 +65,6 @@ class GameScene: SKScene {
     var placeholderSpellSprite = SpellSprite(spell: placeholderSpell, startingPosition: leftSpellStart, endingPosition: leftSpellEnd, facesRight: true)
     
     // Start up the initialization animation.
-    playerOneWizard.doInitialAnimation();
     self.addChild(placeholderSpellSprite)
     placeholderSpellSprite.doInitialAnimation()
 
