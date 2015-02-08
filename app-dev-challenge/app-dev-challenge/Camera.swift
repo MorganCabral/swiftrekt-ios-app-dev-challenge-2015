@@ -14,6 +14,6 @@ import Foundation
  * Use Key-Value Observation to indicate when a picture has successfully
  * been captured.
  */
-public class Camera {
+public class Camera : NSObject {
   
 }

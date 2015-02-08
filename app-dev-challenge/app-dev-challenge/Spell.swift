@@ -22,6 +22,6 @@ public enum Element {
  * Model class which contains state and business logic associated with
  * a spell.
  */
-public class Spell {
+public class Spell : NSObject {
   
 }
