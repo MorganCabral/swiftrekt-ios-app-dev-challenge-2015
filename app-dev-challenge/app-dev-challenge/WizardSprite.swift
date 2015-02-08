@@ -24,6 +24,11 @@ public class WizardSprite : SKSpriteNode {
     
     // Set the position of the sprite to the specified starting position.
     self.position = startingPosition
+    
+    // Scale the sprite if we need to make it look to the left.
+    if !facesRight {
+      self.xScale = fabs(self.xScale) * -1
+    }
   }
 
   required public init?(coder aDecoder: NSCoder) {
