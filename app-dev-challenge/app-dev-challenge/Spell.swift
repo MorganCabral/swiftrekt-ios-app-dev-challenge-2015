@@ -52,6 +52,21 @@ public extension SpellElement {
       }
     }
   }
+    
+  public var spriteFileName : String {
+    get {
+      switch self {
+        case .Fire:
+          return "fire_spell_sprite"
+        case .Water:
+          return "water_spell_sprite"
+        case .Earth:
+          return "earth_spell_sprite"
+        case .Air:
+          return "air_spell_sprite"
+      }
+    }
+  }
 
   /**
    * Get the element that this element is weak against.

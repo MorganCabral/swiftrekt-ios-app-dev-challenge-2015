@@ -41,8 +41,18 @@ class GameScene: SKScene {
     self.addChild(playerOneHealthSprite)
     self.addChild(playerTwoHealthSprite)
     
+    // Add placeholder spell sprite
+    var leftSpellStart = CGPoint(x: width * 0.15, y: 300.0)
+    var leftSpellEnd = CGPoint(x: width, y: 100.0)
+    var placeholderSpell = SpellElement.Fire
+    
+    var placeholderSpellSprite = SpellSprite(spell: placeholderSpell, startingPosition: leftSpellStart, endingPosition: leftSpellEnd, facesRight: true)
+    
+    
     // Start up the initialization animation.
     playerOneWizard.doInitialAnimation();
+    self.addChild(placeholderSpellSprite)
+    placeholderSpellSprite.doInitialAnimation()
   }
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
