@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Team SwiftRekt. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  * Enumeration which represents a specific type of spell.
@@ -34,7 +34,25 @@ public enum SpellElement {
 }
 
 public extension SpellElement {
-  
+
+  /**
+   * Get the color associated with the element.
+   */
+  public var color : UIColor {
+    get {
+      switch self {
+        case .Fire:
+          return UIColor.redColor()
+        case .Water:
+          return UIColor.blueColor()
+        case .Earth:
+          return UIColor.yellowColor()
+        case .Air:
+          return UIColor.greenColor()
+      }
+    }
+  }
+
   /**
    * Get the element that this element is weak against.
    * Being weak against an element means that you will
