@@ -19,6 +19,12 @@
 		90D64FEF1A8682A400809C30 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 90D64FEE1A8682A400809C30 /* background.png */; };
 		90D64FF21A86A1FD00809C30 /* morgan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90D64FF01A86A1FD00809C30 /* morgan.jpg */; };
 		90D64FF31A86A1FD00809C30 /* peter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90D64FF11A86A1FD00809C30 /* peter.jpg */; };
+		90D64FF51A86F8DD00809C30 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FF41A86F8DD00809C30 /* Player.swift */; };
+		90D64FF71A86F8E800809C30 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FF61A86F8E800809C30 /* Camera.swift */; };
+		90D64FF91A86F8F100809C30 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FF81A86F8F100809C30 /* Spell.swift */; };
+		90D64FFC1A86F97900809C30 /* HealthBarSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FFB1A86F97900809C30 /* HealthBarSprite.swift */; };
+		90D64FFE1A86F99C00809C30 /* SpellSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FFD1A86F99C00809C30 /* SpellSprite.swift */; };
+		90D650001A86F9A900809C30 /* PlayerPortraitSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FFF1A86F9A900809C30 /* PlayerPortraitSprite.swift */; };
 		D33E64E21A85C54700A5FCD3 /* BlueWater.png in Resources */ = {isa = PBXBuildFile; fileRef = D33E64DE1A85C54700A5FCD3 /* BlueWater.png */; };
 		D33E64E31A85C54700A5FCD3 /* GreenAir.png in Resources */ = {isa = PBXBuildFile; fileRef = D33E64DF1A85C54700A5FCD3 /* GreenAir.png */; };
 		D33E64E41A85C54700A5FCD3 /* RedFire.png in Resources */ = {isa = PBXBuildFile; fileRef = D33E64E01A85C54700A5FCD3 /* RedFire.png */; };
@@ -57,6 +63,12 @@
 		90D64FEE1A8682A400809C30 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "app-dev-challenge/Assets/background.png"; sourceTree = "<group>"; };
 		90D64FF01A86A1FD00809C30 /* morgan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = morgan.jpg; path = "app-dev-challenge/morgan.jpg"; sourceTree = "<group>"; };
 		90D64FF11A86A1FD00809C30 /* peter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = peter.jpg; path = "app-dev-challenge/peter.jpg"; sourceTree = "<group>"; };
+		90D64FF41A86F8DD00809C30 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		90D64FF61A86F8E800809C30 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		90D64FF81A86F8F100809C30 /* Spell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
+		90D64FFB1A86F97900809C30 /* HealthBarSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBarSprite.swift; sourceTree = "<group>"; };
+		90D64FFD1A86F99C00809C30 /* SpellSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellSprite.swift; sourceTree = "<group>"; };
+		90D64FFF1A86F9A900809C30 /* PlayerPortraitSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPortraitSprite.swift; sourceTree = "<group>"; };
 		D33E64DE1A85C54700A5FCD3 /* BlueWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueWater.png; sourceTree = "<group>"; };
 		D33E64DF1A85C54700A5FCD3 /* GreenAir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenAir.png; sourceTree = "<group>"; };
 		D33E64E01A85C54700A5FCD3 /* RedFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedFire.png; sourceTree = "<group>"; };
@@ -130,6 +142,7 @@
 				90CC59571A83E7AF00E899D2 /* Models */,
 				90CC59561A83E79200E899D2 /* Controllers */,
 				2661DB911A8678FD002D8392 /* Scenes */,
+				90D64FFA1A86F96B00809C30 /* Sprites */,
 				90CC59551A83E78500E899D2 /* Views */,
 			);
 			path = "app-dev-challenge";
@@ -185,8 +198,21 @@
 		90CC59571A83E7AF00E899D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				90D64FF41A86F8DD00809C30 /* Player.swift */,
+				90D64FF61A86F8E800809C30 /* Camera.swift */,
+				90D64FF81A86F8F100809C30 /* Spell.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		90D64FFA1A86F96B00809C30 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				90D64FFB1A86F97900809C30 /* HealthBarSprite.swift */,
+				90D64FFD1A86F99C00809C30 /* SpellSprite.swift */,
+				90D64FFF1A86F9A900809C30 /* PlayerPortraitSprite.swift */,
+			);
+			name = Sprites;
 			sourceTree = "<group>";
 		};
 		D33E64DD1A85C53800A5FCD3 /* Assets */ = {
@@ -319,10 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D64FFE1A86F99C00809C30 /* SpellSprite.swift in Sources */,
 				90D64FED1A867DBE00809C30 /* GameViewController.swift in Sources */,
+				90D650001A86F9A900809C30 /* PlayerPortraitSprite.swift in Sources */,
+				90D64FFC1A86F97900809C30 /* HealthBarSprite.swift in Sources */,
 				90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */,
 				2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */,
 				90D64FEB1A867DB600809C30 /* GameScene.swift in Sources */,
+				90D64FF51A86F8DD00809C30 /* Player.swift in Sources */,
+				90D64FF71A86F8E800809C30 /* Camera.swift in Sources */,
+				90D64FF91A86F8F100809C30 /* Spell.swift in Sources */,
 				90CC59361A83E76F00E899D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
