@@ -12,9 +12,24 @@ import Foundation
  * Enumeration which represents a specific type of spell.
  */
 public enum SpellElement {
+  /**
+   * The fire element.
+   */
   case Fire
+  
+  /**
+   * The water element.
+   */
   case Water
+  
+  /**
+   * The earth element.
+   */
   case Earth
+  
+  /**
+   * The air element.
+   */
   case Air
 }
 
