@@ -9,8 +9,11 @@
 import SpriteKit
 
 class GameScene: SKScene {
-
+  
   override func didMoveToView(view: SKView) {
+    // Set up our player models.
+    players = [ Player(hitPoints: 100), Player(hitPoints: 100)]
+    
     // Initialize the background sprite.
     backgroundNode = SKSpriteNode(imageNamed: "background")
     backgroundNode.anchorPoint = CGPoint(x: 0, y: 1)
@@ -74,26 +77,16 @@ class GameScene: SKScene {
   }
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    /* Called when a touch begins */
-//    
-//    for touch: AnyObject in touches {
-//      let location = touch.locationInNode(self)
-//      
-//      let sprite = SKSpriteNode(imageNamed:"Spaceship")
-//      
-//      sprite.xScale = 0.5
-//      sprite.yScale = 0.5
-//      sprite.position = location
-//      
-//      let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-//      
-//      sprite.runAction(SKAction.repeatActionForever(action))
-//      
-//      self.addChild(sprite)
-//    }
+    if !_isTouchEnabled {
+      return
+    }
+    
+    // Go back to the root view controller.
+    goToRootViewController()
   }
   
   override func update(currentTime: CFTimeInterval) {
+    // One time setup stuff
     if !_hasInitializedCountdown {
       countdownTimerSprite.initializeCountdown(currentTime)
       _hasInitializedCountdown = true
@@ -104,24 +97,116 @@ class GameScene: SKScene {
       _hasSetGameBeginTime = true
     }
 
+    // Update the countdown timer "animation"
     countdownTimerSprite.updateIntroAnimationStartupTimer(currentTime)
     
-    // If the intro animation hasn't started, don't do anything.
+    // After this point, we're ready to actually run our game.
     if !isGameStarted( currentTime ) {
       return
     }
     
+    // Handle players dying.
+    for (id, player) in enumerate(players) {
+      if !player.isAlive {
+        doGameOver(id)
+      }
+    }
+    
+    // After this point, we're casting spells.
+    // We're going to do spells and shit. And we're going to be pleased about.
+    if !isTimeToCastSpells(currentTime) {
+      return
+    }
+    
+    // Grab a spell from the player using the camera.
+    var humanPlayerSpell = getHumanPlayerSpell()
+    
+    // Generate a random spell for the AI player.
+    var aiPlayerSpell = getAIPlayerSpell()
+    
+    if humanPlayerSpell.isFizzleAgainst(aiPlayerSpell) {
+      doFizzleSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
+    }
+    else if humanPlayerSpell.isStrongAgainst(aiPlayerSpell) {
+      doStrongSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
+    }
+    else if humanPlayerSpell.isWeakAgainst(aiPlayerSpell) {
+      doWeakSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
+    }
+    else {
+      doNeutralSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
+    }
+    
+    // Set the next spell casting time.
+    _nextSpellCastingTime = currentTime + 5
+  }
+  
+  func doFizzleSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
+    
+  }
+  
+  func doStrongSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
+    
+  }
+  
+  func doWeakSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
+    
+  }
+  
+  func doNeutralSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
+    
+  }
+  
+  func goToRootViewController() {
+    var viewController = self.scene?.view?.window?.rootViewController as UINavigationController
+    viewController.popToRootViewControllerAnimated(true)
   }
   
   func isGameStarted( currentTime : CFTimeInterval ) -> Bool {
     return currentTime >= _gameBeginTime
   }
   
+  func isTimeToCastSpells( currentTime : CFTimeInterval ) -> Bool {
+    return currentTime >= _nextSpellCastingTime
+  }
+  
+  func doGameOver( id : Int ) {
+    println("Show the game over screen. We also want to enable touch screen support.")
+    _isTouchEnabled = true
+  }
+  
+  func getHumanPlayerSpell() -> SpellElement {
+    // TODO: Pete, put your stuff here.
+    return .Fire
+  }
+  
+  func getAIPlayerSpell() -> SpellElement {
+    var randomNumber = Int(arc4random() % 4)
+    switch randomNumber {
+      case 0:
+       return .Fire
+      case 1:
+        return .Water
+      case 2:
+        return .Earth
+      case 3:
+        return .Air
+      default:
+        return .Fire
+    }
+  }
+  
   var backgroundNode : SKSpriteNode!
   
   private var _gameBeginTime : CFTimeInterval!
+  private var _nextSpellCastingTime : CFTimeInterval!
+  
   private var _hasSetGameBeginTime : Bool = false
   
   var countdownTimerSprite : IntroCountdownSprite!
   private var _hasInitializedCountdown : Bool = false
+  
+  private var _isTouchEnabled = false
+  
+  private var players : [Player] = [Player(hitPoints: 100), Player(hitPoints: 100)]
 }
