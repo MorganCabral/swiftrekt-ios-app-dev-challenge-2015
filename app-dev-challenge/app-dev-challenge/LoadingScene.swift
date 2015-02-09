@@ -17,7 +17,7 @@ class LoadingScene: SKScene {
     backgroundColor = SKColor.greenColor()
     
     // This is radius of the circle path.
-    var r = 50.0
+    var r = 90.0
     
     // Calculate the midpoint and the size of our boundary.
     var circleOrigin = CGPoint(x: 500.0, y: 250.0)
@@ -39,7 +39,7 @@ class LoadingScene: SKScene {
       var sprite = spriteNodes[i]
       
       // Set the sprite size.
-      sprite.size = CGSize( width: 64.0, height: 64.0 )
+      sprite.size = CGSize( width: 100.0, height: 100.0 )
       
       // Calculate the angle of the sprite's position (on the circle).
       var angle = (M_PI / 2.0) * Double(i)

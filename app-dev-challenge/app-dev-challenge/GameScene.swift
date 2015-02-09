@@ -63,6 +63,8 @@ class GameScene: SKScene {
     // Make moves son.
     wizardOne.doInitialAnimation()
     wizardTwo.doInitialAnimation()
+    
+    doGameOver(0)
   }
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -169,6 +171,10 @@ class GameScene: SKScene {
   }
   
   func doGameOver( id : Int ) {
+    var gameOverSprite = GameOverSprite(positionOnScene: CGPoint(x: 500.0, y: -20.0))
+    gameOverSprite.winningPlayerID = id
+    self.addChild(gameOverSprite)
+    gameOverSprite.doSlideAnimation()
     println("Show the game over screen. We also want to enable touch screen support.")
     _isTouchEnabled = true
   }
@@ -207,4 +213,5 @@ class GameScene: SKScene {
   
   private var playerOneHealthSprite : HealthBarSprite!
   private var playerTwoHealthSprite : HealthBarSprite!
+    
 }
