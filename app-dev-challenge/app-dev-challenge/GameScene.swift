@@ -42,8 +42,8 @@ class GameScene: SKScene {
     var rightSpellCastPosition = CGPoint( x: size.width * 0.85, y : 300.0 );
     
     // Initalize Health Sprites
-    var playerOneHealthSprite = HealthBarSprite(positionOnScene: CGPoint(x: 100.0, y: 20.0))
-    var playerTwoHealthSprite = HealthBarSprite(positionOnScene: CGPoint(x: size.width - 100.0, y: size.height - 40.0))
+    playerOneHealthSprite = HealthBarSprite(positionOnScene: CGPoint(x: 100.0, y: 20.0))
+    playerTwoHealthSprite = HealthBarSprite(positionOnScene: CGPoint(x: size.width - 100.0, y: size.height - 40.0))
     
     // Add the composed set of game sprites to the scene.
     // Make sure this is the absolutely last thing that happens.
@@ -109,25 +109,16 @@ class GameScene: SKScene {
     
     // Grab a spell from the player using the camera.
     var maybePlayerSpell = self.mostRecentElement
-    
-    if let playerSpell = maybePlayerSpell {
-      println("\(playerSpell)")
-    }
-    else {
-      println("No spell detected")
-    }
+    var playerSpell = maybePlayerSpell == nil ? .Fire : maybePlayerSpell!
     
     // Generate a random spell for the AI player.
     var maybeAISpell = getAIPlayerSpell()
-    
-    maybePlayerSpell = .Fire
-    maybeAISpell = .Fire
     
     // Add placeholder spell sprite
     var _leftSpellLocation = CGPoint(x: self.frame.width * 0.15, y: 300.0)
     var _rightSpellLocation = CGPoint(x: self.frame.width * 0.85, y: 300.0)
 
-    var playerSpellSprite = SpellSprite(spell: maybePlayerSpell!, startingPosition: _leftSpellLocation, endingPosition: _rightSpellLocation, facesRight: true)
+    var playerSpellSprite = SpellSprite(spell: playerSpell, startingPosition: _leftSpellLocation, endingPosition: _rightSpellLocation, facesRight: true)
     playerSpellSprite.position = _leftSpellLocation
     var aiSpellSprite = SpellSprite(spell: maybeAISpell!, startingPosition: _rightSpellLocation, endingPosition: _leftSpellLocation, facesRight: false)
     aiSpellSprite.position = _rightSpellLocation
@@ -156,10 +147,12 @@ class GameScene: SKScene {
   
   func hurtPlayerOne( hitPoints : Int ) {
     players[0].remainingHitPoints -= hitPoints
+    playerOneHealthSprite.hitPoints = players[0].remainingHitPoints
   }
   
   func hurtPlayerTwo( hitPoints : Int ) {
     players[1].remainingHitPoints -= hitPoints
+    playerTwoHealthSprite.hitPoints = players[1].remainingHitPoints
   }
   
   func goToRootViewController() {
@@ -211,4 +204,7 @@ class GameScene: SKScene {
   private var players : [Player] = [Player(hitPoints: 100), Player(hitPoints: 100)]
   
   public var mostRecentElement : SpellElement?
+  
+  private var playerOneHealthSprite : HealthBarSprite!
+  private var playerTwoHealthSprite : HealthBarSprite!
 }
