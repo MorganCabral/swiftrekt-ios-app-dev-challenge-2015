@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2661DB931A86790B002D8392 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2661DB921A86790B002D8392 /* LoadingScene.swift */; };
 		26BA64371A88401A006D0813 /* GameOverSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA64361A88401A006D0813 /* GameOverSprite.swift */; };
-		26BA64391A88661F006D0813 /* DuelIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BA64381A88661F006D0813 /* DuelIcon.png */; };
 		26EC9C841A87C6FE00699145 /* takePictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC9C831A87C6FE00699145 /* takePictureController.swift */; };
 		90144F641A87DCEC00B42644 /* wizard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90144F631A87DCEC00B42644 /* wizard@2x.png */; };
 		90144F6C1A87DDA200B42644 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 90144F6B1A87DDA200B42644 /* background.png */; };
@@ -60,7 +59,6 @@
 /* Begin PBXFileReference section */
 		2661DB921A86790B002D8392 /* LoadingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		26BA64361A88401A006D0813 /* GameOverSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverSprite.swift; sourceTree = "<group>"; };
-		26BA64381A88661F006D0813 /* DuelIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DuelIcon.png; path = ../../../DuelIcon.png; sourceTree = "<group>"; };
 		26EC9C831A87C6FE00699145 /* takePictureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = takePictureController.swift; sourceTree = "<group>"; };
 		90144F631A87DCEC00B42644 /* wizard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wizard@2x.png"; path = "app-dev-challenge/Assets/wizard@2x.png"; sourceTree = "<group>"; };
 		90144F6B1A87DDA200B42644 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "app-dev-challenge/Assets/background.png"; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 				EE2A1CD21A857EEC00F41D9E /* Framework */,
 				90CC59351A83E76F00E899D2 /* AppDelegate.swift */,
 				90CC593C1A83E76F00E899D2 /* Images.xcassets */,
-				26BA64381A88661F006D0813 /* DuelIcon.png */,
 				90CC593E1A83E76F00E899D2 /* LaunchScreen.xib */,
 				90CC59341A83E76F00E899D2 /* Info.plist */,
 			);
@@ -444,7 +441,6 @@
 				907558CC1A87CCD800FC41E0 /* fire_spell_sprite.png in Resources */,
 				90144F6E1A87E20600B42644 /* background@2x.png in Resources */,
 				907558D01A87CCD800FC41E0 /* water_spell_sprite.png in Resources */,
-				26BA64391A88661F006D0813 /* DuelIcon.png in Resources */,
 				90CC59401A83E76F00E899D2 /* LaunchScreen.xib in Resources */,
 				907558CD1A87CCD800FC41E0 /* GreenAir.png in Resources */,
 				90D64FF31A86A1FD00809C30 /* peter.jpg in Resources */,
