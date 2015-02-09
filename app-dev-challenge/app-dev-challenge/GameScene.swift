@@ -59,20 +59,6 @@ class GameScene: SKScene {
     // Add the HP Player One Label
     self.addChild(playerOneHealthSprite)
     self.addChild(playerTwoHealthSprite)
-    
-    // Add placeholder spell sprite
-    var leftSpellStart = CGPoint(x: width * 0.15, y: 300.0)
-    var leftSpellEnd = CGPoint(x: width, y: 100.0)
-    
-    //
-    
-//    var placeholderSpell = SpellElement.Fire
-    
-//    var placeholderSpellSprite = SpellSprite(spell: placeholderSpell, startingPosition: leftSpellStart, endingPosition: leftSpellEnd, facesRight: true)
-    
-    // Start up the initialization animation.
-//    self.addChild(placeholderSpellSprite)
-//    placeholderSpellSprite.doInitialAnimation()
 
     // Make moves son.
     wizardOne.doInitialAnimation()
@@ -131,27 +117,49 @@ class GameScene: SKScene {
       println("No spell detected")
     }
     
-    
     // Generate a random spell for the AI player.
     var maybeAISpell = getAIPlayerSpell()
     
-//
-//    if let playerSpell = maybePlayerSpell {
-//      if let aiSpell = maybeAISpell {
-//        if( playerSpell.isFizzleAgainst(aiSpell)) {
-//          
-//        }
-//      }
-//      else {
-//        
-//      }
-//    }
-//    else {
-//      
-//    }
+    maybePlayerSpell = .Fire
+    maybeAISpell = .Fire
+    
+    // Add placeholder spell sprite
+    var _leftSpellLocation = CGPoint(x: self.frame.width * 0.15, y: 300.0)
+    var _rightSpellLocation = CGPoint(x: self.frame.width * 0.85, y: 300.0)
+
+    var playerSpellSprite = SpellSprite(spell: maybePlayerSpell!, startingPosition: _leftSpellLocation, endingPosition: _rightSpellLocation, facesRight: true)
+    playerSpellSprite.position = _leftSpellLocation
+    var aiSpellSprite = SpellSprite(spell: maybeAISpell!, startingPosition: _rightSpellLocation, endingPosition: _leftSpellLocation, facesRight: false)
+    aiSpellSprite.position = _rightSpellLocation
+    
+    var moveRight = SKAction.moveTo(_rightSpellLocation, duration: 1.0)
+    var moveLeft = SKAction.moveTo(_leftSpellLocation, duration: 1.0)
+    
+    var hurtAi = SKAction.runBlock({self.hurtPlayerTwo(10)})
+    var hurtHuman = SKAction.runBlock({self.hurtPlayerOne(10)})
+    
+    var removeHumanSprite = SKAction.runBlock({playerSpellSprite.removeFromParent()})
+    var removeAiSprite = SKAction.runBlock({aiSpellSprite.removeFromParent()})
+    
+    var playerActionSequence = SKAction.sequence([moveRight, hurtAi, removeHumanSprite])
+    var aiActionSequence = SKAction.sequence([moveLeft, hurtHuman, removeAiSprite])
+    
+    self.addChild(playerSpellSprite)
+    self.addChild(aiSpellSprite)
+    
+    playerSpellSprite.runAction(playerActionSequence)
+    aiSpellSprite.runAction(aiActionSequence)
     
     // Set the next spell casting time.
     _nextSpellCastingTime = currentTime + 5
+  }
+  
+  func hurtPlayerOne( hitPoints : Int ) {
+    players[0].remainingHitPoints -= hitPoints
+  }
+  
+  func hurtPlayerTwo( hitPoints : Int ) {
+    players[1].remainingHitPoints -= hitPoints
   }
   
   func goToRootViewController() {
@@ -172,7 +180,7 @@ class GameScene: SKScene {
     _isTouchEnabled = true
   }
   
-  func getAIPlayerSpell() -> SpellElement {
+  func getAIPlayerSpell() -> SpellElement? {
     var randomNumber = Int(arc4random() % 4)
     switch randomNumber {
       case 0:
@@ -184,7 +192,7 @@ class GameScene: SKScene {
       case 3:
         return .Air
       default:
-        return .Fire
+        return nil
     }
   }
   
