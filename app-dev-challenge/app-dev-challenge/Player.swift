@@ -60,7 +60,7 @@ public class Player : NSObject {
   /**
    * Optional value which contains the player's image, or a default.
    */
-  public var playerImage : UIImage?
+//  public var playerImage : UIImage?
   
   /**
    * Constructor.
@@ -68,11 +68,11 @@ public class Player : NSObject {
    * :param: hitPoints The player's starting health.
    * :param: playerImage The image to associate with the player
    */
-  public init( hitPoints : Int, playerImage : UIImage ) {
+  public init( hitPoints : Int ) {
     self.maxHitPoints = hitPoints
     self._hitPoints = hitPoints
     self._healthPercentage = 1.0
-    self.playerImage = playerImage
+//    self.playerImage = playerImage
   }
 }
 
