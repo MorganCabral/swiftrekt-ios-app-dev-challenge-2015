@@ -180,6 +180,8 @@ class GameScene: SKScene {
   
   func getHumanPlayerSpell() -> SpellElement {
     // TODO: Pete, put your stuff here.
+    
+    
     return .Fire
   }
   
