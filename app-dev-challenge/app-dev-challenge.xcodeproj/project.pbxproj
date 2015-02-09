@@ -42,7 +42,6 @@
 		90D64FF91A86F8F100809C30 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FF81A86F8F100809C30 /* Spell.swift */; };
 		90D64FFC1A86F97900809C30 /* HealthBarSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FFB1A86F97900809C30 /* HealthBarSprite.swift */; };
 		90D64FFE1A86F99C00809C30 /* SpellSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FFD1A86F99C00809C30 /* SpellSprite.swift */; };
-		90D650001A86F9A900809C30 /* PlayerPortraitSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D64FFF1A86F9A900809C30 /* PlayerPortraitSprite.swift */; };
 		EE2A1CD11A857ECD00F41D9E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +99,6 @@
 		90D64FF81A86F8F100809C30 /* Spell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
 		90D64FFB1A86F97900809C30 /* HealthBarSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBarSprite.swift; sourceTree = "<group>"; };
 		90D64FFD1A86F99C00809C30 /* SpellSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpellSprite.swift; sourceTree = "<group>"; };
-		90D64FFF1A86F9A900809C30 /* PlayerPortraitSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPortraitSprite.swift; sourceTree = "<group>"; };
 		EE2A1CD01A857ECD00F41D9E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -319,7 +317,6 @@
 			children = (
 				90D64FFB1A86F97900809C30 /* HealthBarSprite.swift */,
 				90D64FFD1A86F99C00809C30 /* SpellSprite.swift */,
-				90D64FFF1A86F9A900809C30 /* PlayerPortraitSprite.swift */,
 				907558D31A87CD2A00FC41E0 /* WizardSprite.swift */,
 				904D2A481A881DEB000FDEAF /* IntroCountdownSprite.swift */,
 			);
@@ -470,7 +467,6 @@
 				90D64FFE1A86F99C00809C30 /* SpellSprite.swift in Sources */,
 				907558D41A87CD2A00FC41E0 /* WizardSprite.swift in Sources */,
 				90D64FED1A867DBE00809C30 /* GameViewController.swift in Sources */,
-				90D650001A86F9A900809C30 /* PlayerPortraitSprite.swift in Sources */,
 				26EC9C841A87C6FE00699145 /* takePictureController.swift in Sources */,
 				90D64FFC1A86F97900809C30 /* HealthBarSprite.swift in Sources */,
 				90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */,
