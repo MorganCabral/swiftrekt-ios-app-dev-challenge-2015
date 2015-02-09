@@ -12,17 +12,23 @@ import UIKit
 import SpriteKit
 
 class ViewController: UIViewController {
-    @IBOutlet var startButton: UIButton!
+  @IBOutlet var startButton: UIButton!
+  @IBOutlet weak var rotateSpriteView: SKView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Scene stuff
-//    let scene = LoadingScene(size: view.bounds.size)
-//    let spriteView : SKView = self.view as SKView;
-//    spriteView.showsDrawCount = true;  spriteView.showsNodeCount = true; spriteView.showsFPS = true; spriteView.ignoresSiblingOrder = true
-//    scene.scaleMode = .ResizeFill
-//    spriteView.presentScene(scene)
+    //startButton.backgroundColor = UIColor.clearColor()
+    startButton.layer.cornerRadius = 10
+    startButton.layer.borderWidth = 1
+    startButton.layer.borderColor = UIColor.greenColor().CGColor
+    
+    // Set up the rotate spritekit view.
+    let scene = LoadingScene(size: rotateSpriteView.bounds.size)
+    scene.scaleMode = .ResizeFill
+    
+    rotateSpriteView.ignoresSiblingOrder = true
+    rotateSpriteView.presentScene(scene)
 
   }
 
@@ -40,8 +46,8 @@ class ViewController: UIViewController {
   }
     //here we should be able to activate the camera after hte button is pressed. Try to change the completion to something
     @IBAction func startAction(sender: UIButton) {
-        let picture = self.storyboard?.instantiateViewControllerWithIdentifier("picture") as takePictureController
-        self.navigationController?.pushViewController(picture, animated: false)
+        let gameController = self.storyboard?.instantiateViewControllerWithIdentifier("gameController") as GameViewController
+        self.navigationController?.pushViewController(gameController, animated: false)
     }
 }
 
