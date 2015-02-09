@@ -39,7 +39,7 @@ public class GameOverSprite: SKLabelNode{
                 self.text = "Player Two Wins!"
             }
             else {
-
+                self.text = "Tie"
             }
         }
     }

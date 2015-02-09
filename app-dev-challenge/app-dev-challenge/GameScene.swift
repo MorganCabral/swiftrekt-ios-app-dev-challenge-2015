@@ -63,8 +63,6 @@ class GameScene: SKScene {
     // Make moves son.
     wizardOne.doInitialAnimation()
     wizardTwo.doInitialAnimation()
-    
-    doGameOver(0)
   }
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -77,6 +75,11 @@ class GameScene: SKScene {
   }
   
   override func update(currentTime: CFTimeInterval) {
+    // Is the game over? bail out.
+    if( _isGameOver ) {
+      return
+    }
+
     // One time setup stuff
     if !_hasInitializedCountdown {
       countdownTimerSprite.initializeCountdown(currentTime)
@@ -171,12 +174,13 @@ class GameScene: SKScene {
   }
   
   func doGameOver( id : Int ) {
-    var gameOverSprite = GameOverSprite(positionOnScene: CGPoint(x: 500.0, y: -20.0))
+    var gameOverSprite = GameOverSprite(positionOnScene: CGPoint(x: 500.0, y: -2000.0))
     gameOverSprite.winningPlayerID = id
     self.addChild(gameOverSprite)
     gameOverSprite.doSlideAnimation()
     println("Show the game over screen. We also want to enable touch screen support.")
     _isTouchEnabled = true
+    _isGameOver = true
   }
   
   func getAIPlayerSpell() -> SpellElement? {
@@ -197,6 +201,8 @@ class GameScene: SKScene {
   
   var backgroundNode : SKSpriteNode!
   
+  private var _isGameOver = false;
+
   private var _gameBeginTime : CFTimeInterval!
   private var _nextSpellCastingTime : CFTimeInterval!
   
