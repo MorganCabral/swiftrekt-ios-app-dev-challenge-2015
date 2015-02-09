@@ -14,13 +14,13 @@ import Foundation
 class LoadingScene: SKScene {
 
   override func didMoveToView(view: SKView) {
-    backgroundColor = SKColor.darkGrayColor()
+    backgroundColor = SKColor.greenColor()
     
     // This is radius of the circle path.
     var r = 50.0
     
     // Calculate the midpoint and the size of our boundary.
-    var circleOrigin = CGPoint( x: size.width * 0.5, y: size.height * 0.5 )
+    var circleOrigin = CGPoint(x: 500.0, y: 250.0)
     var boundarySize = CGSize( width: (r / 2.0), height: (r / 2.0 ))
     
     // Create element sprite nodes

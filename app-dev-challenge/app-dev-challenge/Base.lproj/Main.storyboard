@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sGD-hF-e4M">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="app_dev_challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameController" id="BYZ-38-t0r" customClass="GameViewController" customModule="app_dev_challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,11 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Y0H-M1-YtC"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="360"/>
+            <point key="canvasLocation" x="1641" y="916"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="des-qR-K5T">
@@ -35,105 +37,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdk-Ml-cj8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdk-Ml-cj8">
                                 <rect key="frame" x="197" y="519" width="207" height="61"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="28"/>
+                                <color key="backgroundColor" red="0.33072516530000001" green="0.60124362239999996" blue="0.2046161786" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="LFN-aC-Lc6"/>
+                                    <constraint firstAttribute="width" constant="207" id="SmX-cL-jbs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="37"/>
                                 <state key="normal" title="Start!">
-                                    <color key="titleColor" red="0.0019790021040000001" green="0.26650509039999998" blue="0.83670176630000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startAction:" destination="DdZ-SD-zgi" eventType="touchUpInside" id="ViV-b8-nsv"/>
-                                    <segue destination="iZD-UQ-OLy" kind="push" id="zuC-hJ-hZU"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="fMN-Ub-YBN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Duel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-mT-ITH">
-                                <rect key="frame" x="26" y="41" width="549" height="99"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="34"/>
+                                <rect key="frame" x="26" y="28" width="549" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="edX-Sb-haF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="92"/>
                                 <color key="textColor" red="0.0019790021040000001" green="0.26650509039999998" blue="0.83670176630000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ap-LJ-qor" customClass="SKView">
+                                <rect key="frame" x="47" y="188" width="553" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.43822941910000002" green="0.79107541449999996" blue="0.26267523279999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zKl-mT-ITH" secondAttribute="centerX" constant="-0.5" id="TrA-Kw-eTM"/>
-                            <constraint firstAttribute="centerY" secondItem="Bdk-Ml-cj8" secondAttribute="centerY" constant="-249.5" id="jUo-xY-cbH"/>
-                            <constraint firstAttribute="centerY" secondItem="zKl-mT-ITH" secondAttribute="centerY" constant="209.5" id="tOc-RN-FfQ"/>
-                            <constraint firstAttribute="centerX" secondItem="Bdk-Ml-cj8" secondAttribute="centerX" constant="-0.5" id="yv4-2s-dXq"/>
+                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="centerX" secondItem="Bdk-Ml-cj8" secondAttribute="centerX" id="F9n-kv-4Kk"/>
+                            <constraint firstAttribute="bottom" secondItem="Bdk-Ml-cj8" secondAttribute="bottom" constant="20" symbolic="YES" id="W4h-Cc-DOL"/>
+                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="top" secondItem="zKl-mT-ITH" secondAttribute="bottom" constant="8" symbolic="YES" id="YyS-oA-EI6"/>
+                            <constraint firstItem="zKl-mT-ITH" firstAttribute="leading" secondItem="YMT-UQ-kZP" secondAttribute="leadingMargin" constant="10" id="dvG-G8-xsh"/>
+                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="centerX" secondItem="zKl-mT-ITH" secondAttribute="centerX" id="f6j-SD-2c0"/>
+                            <constraint firstItem="Bdk-Ml-cj8" firstAttribute="top" secondItem="4Ap-LJ-qor" secondAttribute="bottom" constant="16" id="ngp-cT-hsT"/>
+                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="trailing" secondItem="YMT-UQ-kZP" secondAttribute="trailingMargin" id="tyb-P3-gaO"/>
+                            <constraint firstItem="zKl-mT-ITH" firstAttribute="top" secondItem="ep7-Bf-hwq" secondAttribute="bottom" constant="8" symbolic="YES" id="uqL-TZ-nMV"/>
+                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="leading" secondItem="YMT-UQ-kZP" secondAttribute="leadingMargin" id="zUz-wx-UYp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ns2-aN-udJ"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="rotateSpriteView" destination="4Ap-LJ-qor" id="2lI-KB-SSk"/>
                         <outlet property="startButton" destination="Bdk-Ml-cj8" id="KFR-ju-K5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq2-Os-AkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1641" y="140"/>
-        </scene>
-        <!--Take Picture Controller-->
-        <scene sceneID="NfN-Qh-UKk">
-            <objects>
-                <viewController storyboardIdentifier="picture" id="iZD-UQ-OLy" customClass="takePictureController" customModule="app_dev_challenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9Lr-hp-VEd"/>
-                        <viewControllerLayoutGuide type="bottom" id="pTg-Ma-cdx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="X9x-MF-Hna">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedFire.png" translatesAutoresizingMaskIntoConstraints="NO" id="lk9-wI-CQ5">
-                                <rect key="frame" x="10" y="8" width="579" height="242"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6B-Od-DFg">
-                                <rect key="frame" x="412" y="507" width="135" height="46"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                <state key="normal" title="Select Opponent">
-                                    <color key="titleColor" red="0.0019790021040000001" green="0.26650509039999998" blue="0.83670176630000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoO-X1-lYX">
-                                <rect key="frame" x="226" y="359" width="149" height="49"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="22"/>
-                                <state key="normal" title="Take Picture">
-                                    <color key="titleColor" red="0.0019790021040000001" green="0.26650509039999998" blue="0.83670176630000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgg-2p-yjx">
-                                <rect key="frame" x="30" y="509" width="116" height="42"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                <state key="normal" title="Go Back">
-                                    <color key="titleColor" red="0.0019790021040000001" green="0.26650509039999998" blue="0.83670176630000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goBack:" destination="iZD-UQ-OLy" eventType="touchUpInside" id="IFb-cV-uCA"/>
-                                    <action selector="startAction:" destination="iZD-UQ-OLy" eventType="touchUpInside" id="MCf-v5-Aqj"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.43822941910000002" green="0.79107541449999996" blue="0.26267523279999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="lk9-wI-CQ5" secondAttribute="centerY" constant="171" id="CHJ-2g-L0I"/>
-                            <constraint firstAttribute="centerX" secondItem="L6B-Od-DFg" secondAttribute="centerX" constant="-179.5" id="Eft-YI-KEd"/>
-                            <constraint firstAttribute="centerX" secondItem="HoO-X1-lYX" secondAttribute="centerX" constant="-0.5" id="Gpk-eg-cHt"/>
-                            <constraint firstAttribute="centerX" secondItem="lk9-wI-CQ5" secondAttribute="centerX" id="PIe-cz-0Mk"/>
-                            <constraint firstAttribute="centerX" secondItem="Bgg-2p-yjx" secondAttribute="centerX" constant="212" id="bAB-8T-UN0"/>
-                            <constraint firstAttribute="centerY" secondItem="L6B-Od-DFg" secondAttribute="centerY" constant="-230" id="fCF-4E-lvy"/>
-                            <constraint firstAttribute="centerY" secondItem="HoO-X1-lYX" secondAttribute="centerY" constant="-83.5" id="gZI-04-eWK"/>
-                            <constraint firstAttribute="centerY" secondItem="Bgg-2p-yjx" secondAttribute="centerY" constant="-230" id="ob1-IX-Qea"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="0FW-Ec-iiv"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fap-Zy-4Ip" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2450" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vJR-Db-I0E">
@@ -156,7 +113,4 @@
             <point key="canvasLocation" x="829" y="140"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="RedFire.png" width="358" height="339"/>
-    </resources>
 </document>
