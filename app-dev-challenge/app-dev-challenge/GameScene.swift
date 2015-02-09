@@ -63,13 +63,16 @@ class GameScene: SKScene {
     // Add placeholder spell sprite
     var leftSpellStart = CGPoint(x: width * 0.15, y: 300.0)
     var leftSpellEnd = CGPoint(x: width, y: 100.0)
-    var placeholderSpell = SpellElement.Fire
     
-    var placeholderSpellSprite = SpellSprite(spell: placeholderSpell, startingPosition: leftSpellStart, endingPosition: leftSpellEnd, facesRight: true)
+    //
+    
+//    var placeholderSpell = SpellElement.Fire
+    
+//    var placeholderSpellSprite = SpellSprite(spell: placeholderSpell, startingPosition: leftSpellStart, endingPosition: leftSpellEnd, facesRight: true)
     
     // Start up the initialization animation.
-    self.addChild(placeholderSpellSprite)
-    placeholderSpellSprite.doInitialAnimation()
+//    self.addChild(placeholderSpellSprite)
+//    placeholderSpellSprite.doInitialAnimation()
 
     // Make moves son.
     wizardOne.doInitialAnimation()
