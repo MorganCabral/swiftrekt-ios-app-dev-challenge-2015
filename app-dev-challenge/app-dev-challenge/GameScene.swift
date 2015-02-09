@@ -122,42 +122,36 @@ class GameScene: SKScene {
     }
     
     // Grab a spell from the player using the camera.
-    var humanPlayerSpell = getHumanPlayerSpell()
+    var maybePlayerSpell = self.mostRecentElement
     
-    // Generate a random spell for the AI player.
-    var aiPlayerSpell = getAIPlayerSpell()
-    
-    if humanPlayerSpell.isFizzleAgainst(aiPlayerSpell) {
-      doFizzleSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
-    }
-    else if humanPlayerSpell.isStrongAgainst(aiPlayerSpell) {
-      doStrongSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
-    }
-    else if humanPlayerSpell.isWeakAgainst(aiPlayerSpell) {
-      doWeakSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
+    if let playerSpell = maybePlayerSpell {
+      println("\(playerSpell)")
     }
     else {
-      doNeutralSpellCastAnimation(humanPlayerSpell, aiSpell: aiPlayerSpell)
+      println("No spell detected")
     }
+    
+    
+    // Generate a random spell for the AI player.
+    var maybeAISpell = getAIPlayerSpell()
+    
+//
+//    if let playerSpell = maybePlayerSpell {
+//      if let aiSpell = maybeAISpell {
+//        if( playerSpell.isFizzleAgainst(aiSpell)) {
+//          
+//        }
+//      }
+//      else {
+//        
+//      }
+//    }
+//    else {
+//      
+//    }
     
     // Set the next spell casting time.
     _nextSpellCastingTime = currentTime + 5
-  }
-  
-  func doFizzleSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
-    
-  }
-  
-  func doStrongSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
-    
-  }
-  
-  func doWeakSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
-    
-  }
-  
-  func doNeutralSpellCastAnimation( humanSpell : SpellElement, aiSpell : SpellElement ) {
-    
   }
   
   func goToRootViewController() {
@@ -176,13 +170,6 @@ class GameScene: SKScene {
   func doGameOver( id : Int ) {
     println("Show the game over screen. We also want to enable touch screen support.")
     _isTouchEnabled = true
-  }
-  
-  func getHumanPlayerSpell() -> SpellElement {
-    // TODO: Pete, put your stuff here.
-    
-    
-    return .Fire
   }
   
   func getAIPlayerSpell() -> SpellElement {
@@ -214,4 +201,6 @@ class GameScene: SKScene {
   private var _isTouchEnabled = false
   
   private var players : [Player] = [Player(hitPoints: 100), Player(hitPoints: 100)]
+  
+  public var mostRecentElement : SpellElement?
 }
