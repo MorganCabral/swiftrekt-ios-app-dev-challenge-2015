@@ -4,6 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Trattatello.ttf">
+            <string>Trattatello</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -22,8 +27,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="AaD-tK-KlU"/>
-                                    <constraint firstAttribute="height" constant="240" id="clr-Yi-HfJ"/>
+                                    <constraint firstAttribute="width" constant="320" id="AaD-tK-KlU">
+                                        <variation key="heightClass=compact" constant="160"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="240" id="clr-Yi-HfJ">
+                                        <variation key="heightClass=compact" constant="120"/>
+                                    </constraint>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="WR1-gm-dne" appends="YES" id="SSO-qU-hWE"/>
@@ -49,7 +58,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1641" y="916"/>
+            <point key="canvasLocation" x="1641" y="915"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="des-qR-K5T">
@@ -64,59 +73,98 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdk-Ml-cj8">
-                                <rect key="frame" x="197" y="519" width="207" height="61"/>
+                                <rect key="frame" x="16" y="519" width="568" height="61"/>
                                 <color key="backgroundColor" red="0.33072516530000001" green="0.60124362239999996" blue="0.2046161786" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="LFN-aC-Lc6"/>
-                                    <constraint firstAttribute="width" constant="207" id="SmX-cL-jbs"/>
+                                    <constraint firstAttribute="height" constant="61" id="DR6-VI-irs"/>
+                                    <constraint firstAttribute="height" constant="61" id="sKm-Cw-Zuu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="37"/>
                                 <state key="normal" title="Start!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DR6-VI-irs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="DR6-VI-irs"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="startAction:" destination="DdZ-SD-zgi" eventType="touchUpInside" id="ViV-b8-nsv"/>
                                     <segue destination="BYZ-38-t0r" kind="push" id="fMN-Ub-YBN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Duel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-mT-ITH">
-                                <rect key="frame" x="26" y="28" width="549" height="99"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKl-mT-ITH">
+                                <rect key="frame" x="16" y="28" width="568" height="99"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="99" id="edX-Sb-haF"/>
+                                    <constraint firstAttribute="height" constant="96" id="BEC-Qk-pJs"/>
+                                    <constraint firstAttribute="height" constant="99" id="sGP-Jy-lpk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="92"/>
-                                <color key="textColor" red="0.0019790021040000001" green="0.26650509039999998" blue="0.83670176630000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Trattatello" family="Trattatello" pointSize="72"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BEC-Qk-pJs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="28" width="568" height="96"/>
+                                    <mask key="constraints">
+                                        <include reference="BEC-Qk-pJs"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ap-LJ-qor" customClass="SKView">
-                                <rect key="frame" x="47" y="188" width="553" height="250"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ws-Tz-383" customClass="SKView">
+                                <rect key="frame" x="16" y="130" width="568" height="367"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="centerX" secondItem="Bdk-Ml-cj8" secondAttribute="centerX" id="F9n-kv-4Kk"/>
-                            <constraint firstAttribute="bottom" secondItem="Bdk-Ml-cj8" secondAttribute="bottom" constant="20" symbolic="YES" id="W4h-Cc-DOL"/>
-                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="top" secondItem="zKl-mT-ITH" secondAttribute="bottom" constant="8" symbolic="YES" id="YyS-oA-EI6"/>
-                            <constraint firstItem="zKl-mT-ITH" firstAttribute="leading" secondItem="YMT-UQ-kZP" secondAttribute="leadingMargin" constant="10" id="dvG-G8-xsh"/>
-                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="centerX" secondItem="zKl-mT-ITH" secondAttribute="centerX" id="f6j-SD-2c0"/>
-                            <constraint firstItem="Bdk-Ml-cj8" firstAttribute="top" secondItem="4Ap-LJ-qor" secondAttribute="bottom" constant="16" id="ngp-cT-hsT"/>
-                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="trailing" secondItem="YMT-UQ-kZP" secondAttribute="trailingMargin" id="tyb-P3-gaO"/>
-                            <constraint firstItem="zKl-mT-ITH" firstAttribute="top" secondItem="ep7-Bf-hwq" secondAttribute="bottom" constant="8" symbolic="YES" id="uqL-TZ-nMV"/>
-                            <constraint firstItem="4Ap-LJ-qor" firstAttribute="leading" secondItem="YMT-UQ-kZP" secondAttribute="leadingMargin" id="zUz-wx-UYp"/>
+                            <constraint firstItem="7ws-Tz-383" firstAttribute="leading" secondItem="Bdk-Ml-cj8" secondAttribute="leading" id="EjC-ym-Qwx"/>
+                            <constraint firstItem="7ws-Tz-383" firstAttribute="trailing" secondItem="YMT-UQ-kZP" secondAttribute="trailingMargin" id="Ia4-As-3uF"/>
+                            <constraint firstItem="Bdk-Ml-cj8" firstAttribute="leading" secondItem="YMT-UQ-kZP" secondAttribute="leadingMargin" id="Ih4-6N-lcC"/>
+                            <constraint firstItem="Bdk-Ml-cj8" firstAttribute="top" secondItem="7ws-Tz-383" secondAttribute="bottom" constant="22" id="T96-MR-DSt"/>
+                            <constraint firstItem="zKl-mT-ITH" firstAttribute="leading" secondItem="7ws-Tz-383" secondAttribute="leading" id="VR3-Jd-yT4"/>
+                            <constraint firstItem="zKl-mT-ITH" firstAttribute="trailing" secondItem="7ws-Tz-383" secondAttribute="trailing" id="VeL-UY-457"/>
+                            <constraint firstAttribute="bottom" secondItem="Bdk-Ml-cj8" secondAttribute="bottom" constant="20" symbolic="YES" id="WqE-xj-1r2"/>
+                            <constraint firstItem="zKl-mT-ITH" firstAttribute="top" secondItem="ep7-Bf-hwq" secondAttribute="bottom" constant="8" symbolic="YES" id="n2G-78-H7c"/>
+                            <constraint firstAttribute="bottom" secondItem="Bdk-Ml-cj8" secondAttribute="bottom" constant="20" symbolic="YES" id="pYm-JZ-4lj"/>
+                            <constraint firstItem="7ws-Tz-383" firstAttribute="top" secondItem="zKl-mT-ITH" secondAttribute="bottom" constant="3" id="rRF-Jv-058"/>
+                            <constraint firstItem="zKl-mT-ITH" firstAttribute="trailing" secondItem="YMT-UQ-kZP" secondAttribute="trailingMargin" id="ux8-Zi-b9p"/>
+                            <constraint firstItem="Bdk-Ml-cj8" firstAttribute="trailing" secondItem="7ws-Tz-383" secondAttribute="trailing" id="yAu-Ul-Fuy"/>
+                            <constraint firstItem="zKl-mT-ITH" firstAttribute="top" secondItem="ep7-Bf-hwq" secondAttribute="bottom" constant="8" symbolic="YES" id="ytr-UK-CSu"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ux8-Zi-b9p"/>
+                                <exclude reference="ytr-UK-CSu"/>
+                                <exclude reference="WqE-xj-1r2"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="ux8-Zi-b9p"/>
+                                <include reference="ytr-UK-CSu"/>
+                                <include reference="WqE-xj-1r2"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ns2-aN-udJ"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="rotateSpriteView" destination="4Ap-LJ-qor" id="2lI-KB-SSk"/>
+                        <outlet property="rotateSpriteView" destination="7ws-Tz-383" id="IEB-c5-rft"/>
                         <outlet property="startButton" destination="Bdk-Ml-cj8" id="KFR-ju-K5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq2-Os-AkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="140"/>
+            <point key="canvasLocation" x="1641" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vJR-Db-I0E">

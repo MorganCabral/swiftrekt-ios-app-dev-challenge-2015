@@ -28,6 +28,7 @@
 		907558D11A87CCD800FC41E0 /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 907558C41A87CCD800FC41E0 /* wizard.png */; };
 		907558D21A87CCD800FC41E0 /* YellowEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = 907558C51A87CCD800FC41E0 /* YellowEarth.png */; };
 		907558D41A87CD2A00FC41E0 /* WizardSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907558D31A87CD2A00FC41E0 /* WizardSprite.swift */; };
+		90B781FC1A8BD6DA00FE1AB4 /* Trattatello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B781FB1A8BD6DA00FE1AB4 /* Trattatello.ttf */; };
 		90CC59361A83E76F00E899D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59351A83E76F00E899D2 /* AppDelegate.swift */; };
 		90CC59381A83E76F00E899D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC59371A83E76F00E899D2 /* ViewController.swift */; };
 		90CC593B1A83E76F00E899D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90CC59391A83E76F00E899D2 /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		909F09AA1A845FA600D131FC /* GameAssets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GameAssets.playground; sourceTree = "<group>"; };
 		909F09AB1A845FB700D131FC /* Networking.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Networking.playground; sourceTree = "<group>"; };
 		909F09AC1A845FCB00D131FC /* UI.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = UI.playground; sourceTree = "<group>"; };
+		90B781FB1A8BD6DA00FE1AB4 /* Trattatello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Trattatello.ttf; path = "app-dev-challenge/Assets/Trattatello.ttf"; sourceTree = "<group>"; };
 		90CC59301A83E76F00E899D2 /* app-dev-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-dev-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CC59341A83E76F00E899D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90CC59351A83E76F00E899D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		D33E64DD1A85C53800A5FCD3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				90B781FB1A8BD6DA00FE1AB4 /* Trattatello.ttf */,
 				90144F6A1A87DD6500B42644 /* Pictures */,
 				90144F611A87DCD500B42644 /* Sprites */,
 			);
@@ -392,7 +395,6 @@
 				TargetAttributes = {
 					90CC592F1A83E76F00E899D2 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 2S3D8J8M3T;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -432,6 +434,7 @@
 				907558CF1A87CCD800FC41E0 /* water_impact_sprite.png in Resources */,
 				90144F6C1A87DDA200B42644 /* background.png in Resources */,
 				907558C71A87CCD800FC41E0 /* air_spell_sprite.png in Resources */,
+				90B781FC1A8BD6DA00FE1AB4 /* Trattatello.ttf in Resources */,
 				907558D21A87CCD800FC41E0 /* YellowEarth.png in Resources */,
 				907558CB1A87CCD800FC41E0 /* fire_impact_spell.png in Resources */,
 				90D64FF21A86A1FD00809C30 /* morgan.jpg in Resources */,

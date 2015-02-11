@@ -20,7 +20,7 @@ class LoadingScene: SKScene {
     var r = 90.0
     
     // Calculate the midpoint and the size of our boundary.
-    var circleOrigin = CGPoint(x: 500.0, y: 250.0)
+    var circleOrigin = CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame))
     var boundarySize = CGSize( width: (r / 2.0), height: (r / 2.0 ))
     
     // Create element sprite nodes
