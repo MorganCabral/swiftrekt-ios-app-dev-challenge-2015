@@ -69,11 +69,10 @@ class GameViewController: UIViewController {
     captureSession = AVCaptureSession()
     captureSession!.sessionPreset = AVCaptureSessionPresetPhoto
     
-//    var backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-    var frontCamera = getFrontFacingCamera()
+    var cameraDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     
     var error: NSError?
-    var input = AVCaptureDeviceInput(device: frontCamera, error: &error)
+    var input = AVCaptureDeviceInput(device: cameraDevice, error: &error)
     
     if error == nil && captureSession!.canAddInput(input) {
       captureSession!.addInput(input)
@@ -157,29 +156,31 @@ class GameViewController: UIViewController {
           let total = redval + greenval + blueval
           let avg = Float(total/3);
           
+          // red
           if( Float(redval) >= avg
             && (Float(greenval)+Float(blueval)<(avg*2)
-              && Float(greenval)<(avg)))
-          {//red
-            self.scene.mostRecentElement = .Fire
+              && Float(greenval)<(avg))) {
+            self.scene.schedulePlayerCastSpell(.Fire)
           }
+
+          // green
           else if( Float(greenval) >= avg
             && (Float(redval) < avg)
             && (Float(blueval) < avg)
-            )
-          {//green
-            self.scene.mostRecentElement = .Air
+            ) {
+            self.scene.schedulePlayerCastSpell(.Air)
           }
-          else if( Float(blueval) >= avg && (Float(greenval)+Float(redval)<(avg*2)))
-          {//blue
-            self.scene.mostRecentElement = .Water
+
+          // blue
+          else if( Float(blueval) >= avg && (Float(greenval)+Float(redval)<(avg*2))) {
+            self.scene.schedulePlayerCastSpell(.Water)
           }
+
+          // yellow
           else if( Float(blueval) < avg
-            && ((Float(greenval) > avg) && ( Float(redval) > avg) )
-            )
-          {//yellow
-            self.scene.mostRecentElement = .Earth
-            }
+            && ((Float(greenval) > avg) && ( Float(redval) > avg) ) ) {
+            self.scene.schedulePlayerCastSpell(.Earth)
+          }
         }
       })
     }
