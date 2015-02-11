@@ -163,18 +163,23 @@ class GameViewController: UIViewController {
           {//red
             self.scene.mostRecentElement = .Fire
           }
-          else if( Float(blueval) < avg && (Float(greenval)+Float(redval)>=(avg*2)) )
-          {//yellow
-            self.scene.mostRecentElement = .Earth
+          else if( Float(greenval) >= avg
+            && (Float(redval) < avg)
+            && (Float(blueval) < avg)
+            )
+          {//green
+            self.scene.mostRecentElement = .Air
           }
           else if( Float(blueval) >= avg && (Float(greenval)+Float(redval)<(avg*2)))
           {//blue
             self.scene.mostRecentElement = .Water
           }
-          else if( Float(greenval) >= avg && (Float(redval)+Float(blueval)<(avg*2)))
-          {//green
-            self.scene.mostRecentElement = .Air
-          }
+          else if( Float(blueval) < avg
+            && ((Float(greenval) > avg) && ( Float(redval) > avg) )
+            )
+          {//yellow
+            self.scene.mostRecentElement = .Earth
+            }
         }
       })
     }
