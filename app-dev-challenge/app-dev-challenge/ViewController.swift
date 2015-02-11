@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     //startButton.backgroundColor = UIColor.clearColor()
     startButton.layer.cornerRadius = 10
     startButton.layer.borderWidth = 1
-    startButton.layer.borderColor = UIColor.greenColor().CGColor
     
     // Set up the rotate spritekit view.
     let scene = LoadingScene(size: rotateSpriteView.bounds.size)
