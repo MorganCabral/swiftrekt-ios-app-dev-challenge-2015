@@ -32,10 +32,10 @@ public class GameOverSprite: SKLabelNode{
     public var winningPlayerID : Int {
         get { return winningPlayerID }
         set ( playerID ) {
-            if( playerID == 0 ) {
+            if( playerID == 1 ) {
                 self.text = "Player One Wins!"
             }
-            else if ( playerID == 1) {
+            else if ( playerID == 0) {
                 self.text = "Player Two Wins!"
             }
             else {
