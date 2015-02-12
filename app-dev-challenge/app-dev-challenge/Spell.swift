@@ -52,7 +52,10 @@ public extension SpellElement {
       }
     }
   }
-    
+  
+  /**
+   * Get the name of the sprite file associated with the element.
+   */
   public var spriteFileName : String {
     get {
       switch self {
