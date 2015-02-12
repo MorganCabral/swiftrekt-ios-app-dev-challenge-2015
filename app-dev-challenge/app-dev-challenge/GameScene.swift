@@ -99,55 +99,25 @@ class GameScene: SKScene {
       return
     }
     
+    // Add placeholder spell sprite
+    var _leftSpellLocation = CGPoint(x: self.frame.width * 0.15, y: 300.0)
+    var _rightSpellLocation = CGPoint(x: self.frame.width * 0.85, y: 300.0)
+    
+    // Update the players.
+    if shouldUpdateAIPlayer(currentTime) {
+      updateAIPlayer(currentTime, _spellStart: _rightSpellLocation, _spellEnd: _leftSpellLocation)
+    }
+    
+    if shouldUpdateHumanPlayer(currentTime) {
+      updateHumanPlayer(currentTime, _spellStart: _leftSpellLocation, _spellEnd: _rightSpellLocation)
+    }
+    
     // Handle players dying.
     for (id, player) in enumerate(players) {
       if !player.isAlive {
         doGameOver(id)
       }
     }
-    
-    // After this point, we're casting spells.
-    // We're going to do spells and shit. And we're going to be pleased about.
-    if !isTimeToCastSpells(currentTime) {
-      return
-    }
-    
-    // Grab a spell from the player using the camera.
-    var maybePlayerSpell = self.mostRecentElement
-    var playerSpell = maybePlayerSpell == nil ? .Fire : maybePlayerSpell!
-    
-    // Generate a random spell for the AI player.
-    var maybeAISpell = getAIPlayerSpell()
-    
-    // Add placeholder spell sprite
-    var _leftSpellLocation = CGPoint(x: self.frame.width * 0.15, y: 300.0)
-    var _rightSpellLocation = CGPoint(x: self.frame.width * 0.85, y: 300.0)
-
-    var playerSpellSprite = SpellSprite(spell: playerSpell, startingPosition: _leftSpellLocation, endingPosition: _rightSpellLocation, facesRight: true)
-    playerSpellSprite.position = _leftSpellLocation
-    var aiSpellSprite = SpellSprite(spell: maybeAISpell!, startingPosition: _rightSpellLocation, endingPosition: _leftSpellLocation, facesRight: false)
-    aiSpellSprite.position = _rightSpellLocation
-    
-    var moveRight = SKAction.moveTo(_rightSpellLocation, duration: 1.0)
-    var moveLeft = SKAction.moveTo(_leftSpellLocation, duration: 1.0)
-    
-    var hurtAi = SKAction.runBlock({self.hurtPlayerTwo(10)})
-    var hurtHuman = SKAction.runBlock({self.hurtPlayerOne(10)})
-    
-    var removeHumanSprite = SKAction.runBlock({playerSpellSprite.removeFromParent()})
-    var removeAiSprite = SKAction.runBlock({aiSpellSprite.removeFromParent()})
-    
-    var playerActionSequence = SKAction.sequence([moveRight, hurtAi, removeHumanSprite])
-    var aiActionSequence = SKAction.sequence([moveLeft, hurtHuman, removeAiSprite])
-    
-    self.addChild(playerSpellSprite)
-    self.addChild(aiSpellSprite)
-    
-    playerSpellSprite.runAction(playerActionSequence)
-    aiSpellSprite.runAction(aiActionSequence)
-    
-    // Set the next spell casting time.
-    _nextSpellCastingTime = currentTime + 5
   }
   
   func hurtPlayerOne( hitPoints : Int ) {
@@ -167,10 +137,6 @@ class GameScene: SKScene {
   
   func isGameStarted( currentTime : CFTimeInterval ) -> Bool {
     return currentTime >= _gameBeginTime
-  }
-  
-  func isTimeToCastSpells( currentTime : CFTimeInterval ) -> Bool {
-    return currentTime >= _nextSpellCastingTime
   }
   
   func doGameOver( id : Int ) {
@@ -199,12 +165,66 @@ class GameScene: SKScene {
     }
   }
   
+  func schedulePlayerCastSpell( spell : SpellElement ) {
+    _hasPlayerSpell = true
+    mostRecentElement = spell
+  }
+  
+  func shouldUpdateHumanPlayer( currentTime : CFTimeInterval ) -> Bool {
+    return ( currentTime >= _nextPlayerSpellCastTime ) && _hasPlayerSpell
+  }
+  
+  func shouldUpdateAIPlayer( currentTime : CFTimeInterval ) -> Bool {
+    return currentTime >= _nextAISpellCastTime
+  }
+  
+  func updateHumanPlayer( currentTime : CFTimeInterval, _spellStart : CGPoint, _spellEnd : CGPoint ) {
+    // Grab a spell from the player using the camera.
+    var maybePlayerSpell = self.mostRecentElement
+    var playerSpell = maybePlayerSpell == nil ? .Fire : maybePlayerSpell!
+    
+    var playerSpellSprite = SpellSprite(spell: playerSpell, startingPosition: _spellStart, endingPosition: _spellEnd, facesRight: true)
+    playerSpellSprite.position = _spellStart
+    
+    var moveRight = SKAction.moveTo(_spellEnd, duration: 1.0)
+    var hurtAi = SKAction.runBlock({self.hurtPlayerTwo(10)})
+    var removeHumanSprite = SKAction.runBlock({playerSpellSprite.removeFromParent()})
+    
+    var playerActionSequence = SKAction.sequence([moveRight, hurtAi, removeHumanSprite])
+    self.addChild(playerSpellSprite)
+    playerSpellSprite.runAction(playerActionSequence)
+    
+    // Clear out the spell and add in the spell cooldown time.
+    _hasPlayerSpell = false
+    _nextPlayerSpellCastTime = currentTime + 0.1
+  }
+  
+  func updateAIPlayer( currentTime : CFTimeInterval, _spellStart : CGPoint, _spellEnd : CGPoint  ) {
+    // Generate a random spell for the AI player.
+    var maybeAISpell = getAIPlayerSpell()
+    
+    var aiSpellSprite = SpellSprite(spell: maybeAISpell!, startingPosition: _spellStart, endingPosition: _spellEnd, facesRight: false)
+    aiSpellSprite.position = _spellStart
+    
+    var moveLeft = SKAction.moveTo(_spellEnd, duration: 1.0)
+    var hurtHuman = SKAction.runBlock({self.hurtPlayerOne(10)})
+    var removeAiSprite = SKAction.runBlock({aiSpellSprite.removeFromParent()})
+    
+    var aiActionSequence = SKAction.sequence([moveLeft, hurtHuman, removeAiSprite])
+    self.addChild(aiSpellSprite)
+    aiSpellSprite.runAction(aiActionSequence)
+    
+    // Set the next spell casting time for the AI player.
+    _nextAISpellCastTime = currentTime + 5
+  }
+  
   var backgroundNode : SKSpriteNode!
   
   private var _isGameOver = false;
 
   private var _gameBeginTime : CFTimeInterval!
-  private var _nextSpellCastingTime : CFTimeInterval!
+  private var _nextAISpellCastTime : CFTimeInterval!
+  private var _nextPlayerSpellCastTime : CFTimeInterval!
   
   private var _hasSetGameBeginTime : Bool = false
   
@@ -215,7 +235,8 @@ class GameScene: SKScene {
   
   private var players : [Player] = [Player(hitPoints: 100), Player(hitPoints: 100)]
   
-  public var mostRecentElement : SpellElement?
+  private var mostRecentElement : SpellElement?
+  private var _hasPlayerSpell : Bool = false
   
   private var playerOneHealthSprite : HealthBarSprite!
   private var playerTwoHealthSprite : HealthBarSprite!
