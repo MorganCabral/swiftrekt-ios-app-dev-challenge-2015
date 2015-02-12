@@ -74,7 +74,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdk-Ml-cj8">
                                 <rect key="frame" x="16" y="519" width="568" height="61"/>
-                                <color key="backgroundColor" red="0.33072516530000001" green="0.60124362239999996" blue="0.2046161786" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="DR6-VI-irs"/>
                                     <constraint firstAttribute="height" constant="61" id="sKm-Cw-Zuu"/>
@@ -124,7 +123,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7ws-Tz-383" firstAttribute="leading" secondItem="Bdk-Ml-cj8" secondAttribute="leading" id="EjC-ym-Qwx"/>
                             <constraint firstItem="7ws-Tz-383" firstAttribute="trailing" secondItem="YMT-UQ-kZP" secondAttribute="trailingMargin" id="Ia4-As-3uF"/>
