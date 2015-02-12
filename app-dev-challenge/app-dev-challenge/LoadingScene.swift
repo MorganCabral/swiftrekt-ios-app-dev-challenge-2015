@@ -14,7 +14,7 @@ import Foundation
 class LoadingScene: SKScene {
 
   override func didMoveToView(view: SKView) {
-    backgroundColor = SKColor.greenColor()
+    backgroundColor = UIColor.grayColor()
     
     // This is radius of the circle path.
     var r = 90.0
